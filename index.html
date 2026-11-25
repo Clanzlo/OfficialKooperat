@@ -2,589 +2,1482 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>УСТАВ КООПЕРАТИВА</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>КООПЕРАТИВ // УСТАВ ФРАКЦИИ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  @page { size: A4; margin: 1.8cm 1.8cm 2.2cm 1.8cm; }
+  @page { size: A4; margin: 1.6cm; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root{
-    --navy:#12263f;
-    --navy2:#1e3a5f;
-    --gold:#c9a227;
-    --gold-l:#e6c85c;
-    --ink:#1b2430;
-    --muted:#5b6b7f;
-    --line:#dfe5ee;
-    --bg:#eef1f6;
+    --bg0:#0b0d10; --bg1:#12161b; --bg2:#151a20; --bg3:#1b2129;
+    --line:#2a313a; --line2:#39424d;
+    --bone:#e9e6dd; --txt:#d6dbe1; --mut:#98a2ad; --dim:#7b8794;
+    --orange:#ff6a00; --amber:#ffb020; --acid:#a3e635;
+    --red:#ff6b6b; --red-deep:#e5484d;
+    --cyan:#4cc3ff; --violet:#b18cff;
+    --acc:var(--cyan); --acc-soft:rgba(76,195,255,.10); --acc-line:rgba(76,195,255,.40);
+    --disp:'Russo One',Impact,'Arial Black',sans-serif;
+    --body:'Manrope',system-ui,'Segoe UI',sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+    --head-h:64px;
   }
+  #r1{--acc:var(--cyan);--acc-soft:rgba(76,195,255,.10);--acc-line:rgba(76,195,255,.40);}
+  #r2{--acc:var(--amber);--acc-soft:rgba(255,176,32,.10);--acc-line:rgba(255,176,32,.40);}
+  #r3{--acc:var(--orange);--acc-soft:rgba(255,106,0,.10);--acc-line:rgba(255,106,0,.42);}
+  #r4{--acc:var(--acid);--acc-soft:rgba(163,230,53,.10);--acc-line:rgba(163,230,53,.40);}
+  #r5{--acc:var(--violet);--acc-soft:rgba(177,140,255,.10);--acc-line:rgba(177,140,255,.40);}
 
-  body{
-    font-family:"Georgia","Times New Roman",serif;
-    font-size:11.5pt;
-    line-height:1.7;
-    color:var(--ink);
-    background:var(--bg);
-    padding:30px 10px;
-  }
+  html{ scroll-behavior:smooth; overflow-x:clip; scrollbar-color:var(--orange) #0b0d10; scrollbar-width:thin; }
+  [id]{ scroll-margin-top:calc(var(--head-h) + 16px); }
+  ::selection{ background:var(--orange); color:#0b0d10; }
+  :focus-visible{ outline:2px solid var(--cyan); outline-offset:2px; }
 
-  .page{
-    max-width:860px;
-    margin:0 auto;
-    background:#fff;
-    padding:60px 64px 80px;
-    box-shadow:0 12px 50px rgba(18,38,63,.22);
-    border-radius:8px;
-    position:relative;
-  }
-  .page::before{
-    content:"";
-    position:absolute;
-    inset:14px;
-    border:1px solid var(--line);
-    border-radius:6px;
-    pointer-events:none;
-  }
+  ::-webkit-scrollbar{ width:11px; }
+  ::-webkit-scrollbar-track{ background:#0b0d10; border-left:1px solid #1b2129; }
+  ::-webkit-scrollbar-thumb{ background:linear-gradient(180deg,#ff6a00,#ffb020); border-radius:8px; border:3px solid #0b0d10; }
+  ::-webkit-scrollbar-thumb:hover{ background:linear-gradient(180deg,#ffb020,#ffd166); }
 
-  /* ===== ТИТУЛЬНЫЙ ЛИСТ ===== */
-  .cover{
-    text-align:center;
-    padding:30px 20px 50px;
-    page-break-after:always;
-  }
-  .cover .frame{
-    border:3px double var(--navy);
-    border-radius:8px;
-    padding:70px 40px 60px;
+  body{ font-family:var(--body); font-size:15px; line-height:1.7; color:var(--txt); background:var(--bg0); }
+
+  /* ===== ФОН ===== */
+  .bg{ position:fixed; inset:0; z-index:-2; pointer-events:none;
     background:
-      radial-gradient(circle at top left, rgba(201,162,39,.08), transparent 40%),
-      radial-gradient(circle at bottom right, rgba(18,38,63,.06), transparent 45%),
-      linear-gradient(180deg,#fbfcfe 0%,#ffffff 100%);
-    position:relative;
+      radial-gradient(900px 600px at 8% -8%, rgba(255,106,0,.13), transparent 60%),
+      radial-gradient(1000px 700px at 108% 18%, rgba(76,195,255,.09), transparent 60%),
+      radial-gradient(800px 800px at 50% 118%, rgba(177,140,255,.08), transparent 65%),
+      linear-gradient(180deg,#0b0d10,#10141a 45%,#0b0e13);
   }
-  .cover .frame::after{
-    content:"";
-    position:absolute;
-    inset:10px;
-    border:1px solid var(--gold);
-    border-radius:6px;
-    opacity:.55;
-    pointer-events:none;
+  .bg::before{ content:""; position:absolute; inset:-22%;
+    background:
+      radial-gradient(620px 420px at 30% 32%, rgba(255,106,0,.09), transparent 60%),
+      radial-gradient(720px 520px at 72% 62%, rgba(76,195,255,.07), transparent 60%);
+    animation:drift 34s ease-in-out infinite alternate;
   }
-  .emblem{
-    font-size:52pt;
-    color:var(--navy);
-    margin-bottom:6px;
-    filter:drop-shadow(0 3px 6px rgba(18,38,63,.25));
+  @keyframes drift{ to{ transform:translate(4%,-3%) rotate(2deg); } }
+  .grain{ position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
   }
-  .cover h1{
-    font-size:34pt;
-    letter-spacing:5px;
-    text-transform:uppercase;
-    color:var(--navy);
-    line-height:1.15;
-    margin:14px 0 6px;
-    font-weight:700;
+  .scan{ position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 1px, transparent 1px 3px);
   }
-  .cover h1 span{ color:var(--gold); }
-  .cover .subtitle{
-    font-size:11.5pt;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:var(--muted);
-    margin-bottom:34px;
-  }
-  .ornament{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    margin:0 auto 34px;
-    color:var(--gold);
-  }
-  .ornament::before,.ornament::after{
-    content:"";
-    width:90px;height:1px;
-    background:linear-gradient(90deg,transparent,var(--gold));
-  }
-  .ornament::after{ background:linear-gradient(90deg,var(--gold),transparent); }
-  .ornament b{ font-size:14pt; letter-spacing:2px; }
 
-  .cover .meta{
-    display:inline-block;
-    text-align:left;
-    border-top:1px solid var(--line);
+  /* ===== ШАПКА ===== */
+  .nav{ position:fixed; top:0; left:0; right:0; z-index:50;
+    background:rgba(11,13,16,.92); backdrop-filter:blur(12px);
     border-bottom:1px solid var(--line);
-    padding:18px 26px;
-    font-size:10.5pt;
-    color:var(--navy2);
-    line-height:2;
   }
-  .cover .meta strong{ color:var(--navy); }
-  .cover .stamp{
-    margin-top:36px;
-    display:inline-block;
-    border:2px solid var(--gold);
-    color:var(--gold);
-    padding:8px 26px;
-    border-radius:40px;
-    font-size:9.5pt;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    font-weight:700;
-    background:rgba(201,162,39,.06);
+  .prog{ position:absolute; left:0; bottom:-1px; height:2px; width:0%;
+    background:linear-gradient(90deg,var(--orange),var(--amber),var(--acid),var(--cyan));
+    box-shadow:0 0 10px rgba(255,140,0,.55);
+  }
+  .nav-row{ max-width:1240px; margin:0 auto; display:flex; align-items:center; gap:14px; padding:0 20px; height:64px; }
+  .brand{ display:flex; align-items:center; gap:11px; text-decoration:none; flex-shrink:0; }
+  .brand svg{ color:var(--orange); filter:drop-shadow(0 0 8px rgba(255,106,0,.5)); }
+  .brand .bt{ display:flex; flex-direction:column; line-height:1.25; }
+  .brand .bt b{ font-family:var(--disp); font-size:13px; letter-spacing:1.5px; color:var(--bone); font-weight:400; }
+  .brand .bt span{ font-family:var(--mono); font-size:8.5px; letter-spacing:1.5px; color:var(--dim); }
+  .brand .bt span i{ font-style:normal; color:var(--acid); animation:led 2.2s ease-in-out infinite; }
+  @keyframes led{ 50%{ opacity:.35; } }
+
+  .search{ flex:1; max-width:560px; display:flex; align-items:center; gap:7px; min-width:0;
+    background:#0d1013; border:1px solid var(--line); border-radius:9px; padding:6px 10px;
+    transition:border-color .2s, box-shadow .2s;
+  }
+  .search:focus-within{ border-color:var(--cyan); box-shadow:0 0 0 3px rgba(76,195,255,.14); }
+  .search > svg{ flex-shrink:0; color:var(--cyan); }
+  .search input{ flex:1; min-width:0; background:none; border:0; outline:0; color:var(--bone); font:inherit; font-size:13px; }
+  .search input::placeholder{ color:var(--dim); }
+  .search kbd{ font-family:var(--mono); font-size:9px; color:var(--dim); border:1px solid var(--line2); border-radius:4px; padding:2px 6px; flex-shrink:0; }
+  .search .cnt{ font-family:var(--mono); font-size:9px; color:var(--amber); white-space:nowrap; letter-spacing:.5px; }
+  .search button{ flex-shrink:0; width:24px; height:24px; border-radius:6px; cursor:pointer;
+    background:none; border:1px solid var(--line2); color:var(--mut);
+    font:inherit; font-size:13px; line-height:1; display:inline-flex; align-items:center; justify-content:center;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .search button:hover{ background:rgba(255,106,0,.15); color:var(--amber); border-color:rgba(255,106,0,.5); }
+  .print{ flex-shrink:0; display:inline-flex; align-items:center; gap:8px; cursor:pointer;
+    background:rgba(255,106,0,.10); border:1px solid rgba(255,106,0,.55); color:var(--amber);
+    border-radius:8px; padding:8px 14px;
+    font-family:var(--mono); font-size:10px; letter-spacing:1.5px; font-weight:700;
+    transition:background .2s, color .2s, transform .15s;
+  }
+  .print:hover{ background:linear-gradient(135deg,var(--orange),var(--amber)); color:#0b0d10; transform:translateY(-1px); }
+
+  .chips{ position:relative; display:none; gap:8px; overflow-x:auto; padding:0 16px 9px;
+    scrollbar-width:thin; scrollbar-color:var(--orange) transparent;
+  }
+  .chips::-webkit-scrollbar{ height:5px; }
+  .chips::-webkit-scrollbar-track{ background:transparent; border:0; }
+  .chips::-webkit-scrollbar-thumb{ background:var(--orange); border-radius:4px; border:0; }
+  .chip{ white-space:nowrap; text-decoration:none; font-family:var(--mono); font-size:9.5px; letter-spacing:1.2px;
+    color:var(--mut); padding:5px 12px; border:1px solid var(--line2); border-radius:999px;
+    transition:color .2s, border-color .2s, background .2s;
+  }
+  .chip:hover{ color:var(--amber); border-color:rgba(255,106,0,.5); }
+  .chip.on{ background:linear-gradient(135deg,var(--orange),var(--amber)); color:#0b0d10; border-color:transparent; font-weight:700; }
+
+  /* ===== КАРКАС ===== */
+  .shell{ display:grid; grid-template-columns:250px minmax(0,1fr); gap:28px; align-items:start;
+    max-width:1240px; margin:0 auto; padding:calc(var(--head-h) + 26px) 20px 80px;
   }
 
-  /* ===== ОГЛАВЛЕНИЕ ===== */
-  .toc{
-    background:linear-gradient(180deg,#f7f9fc,#ffffff);
-    border:1px solid var(--line);
-    border-left:6px solid var(--navy);
-    border-radius:10px;
-    padding:26px 30px;
-    margin:10px 0 20px;
-    box-shadow:0 2px 10px rgba(18,38,63,.06);
+  /* ===== САЙДБАР ===== */
+  .side{ position:sticky; top:calc(var(--head-h) + 16px); display:flex; flex-direction:column; gap:14px;
+    max-height:calc(100vh - var(--head-h) - 32px); overflow-y:auto;
+    scrollbar-width:thin; scrollbar-color:var(--line2) transparent;
   }
-  .toc h4{
-    font-size:12pt;
-    color:var(--navy);
-    letter-spacing:3px;
-    text-transform:uppercase;
-    margin-bottom:14px;
-    display:flex;
-    align-items:center;
-    gap:10px;
+  .side::-webkit-scrollbar{ width:6px; }
+  .side::-webkit-scrollbar-track{ background:transparent; border:0; }
+  .side::-webkit-scrollbar-thumb{ background:var(--line2); border:0; border-radius:4px; }
+  .side-box{ border:1px solid var(--line); border-radius:10px; background:var(--bg1); padding:14px; }
+  .side-label{ font-family:var(--mono); font-size:9px; letter-spacing:2px; color:var(--dim); margin-bottom:10px; }
+  .snav{ display:flex; gap:10px; align-items:baseline; padding:8px 10px; border-radius:7px;
+    color:var(--mut); text-decoration:none; font-size:12.5px; font-weight:600;
+    border-left:2px solid transparent; transition:color .2s, background .2s, border-color .2s;
   }
-  .toc h4::before{ content:"❖"; color:var(--gold); font-size:14pt; }
-  .toc ol{ list-style:none; counter-reset:toc; padding:0; }
-  .toc li{
-    counter-increment:toc;
-    display:flex;
-    align-items:baseline;
-    gap:10px;
-    padding:7px 0;
-    border-bottom:1px dashed var(--line);
+  .snav i{ font-family:var(--mono); font-style:normal; font-size:10px; color:var(--dim); transition:color .2s; }
+  .snav:hover{ color:var(--bone); background:rgba(255,255,255,.03); }
+  .snav.on{ color:var(--bone); background:rgba(255,106,0,.08); border-left-color:var(--orange); }
+  .snav.on i{ color:var(--orange); }
+  .ssub{ padding:2px 0 6px 36px; display:flex; flex-direction:column; gap:2px; }
+  .ssub a{ font-family:var(--mono); font-size:10px; letter-spacing:.5px; color:var(--dim); text-decoration:none; padding:3px 0; transition:color .2s; }
+  .ssub a:hover{ color:var(--bone); }
+  .ssub a.on{ color:var(--amber); }
+  .pbar{ height:6px; background:#0d1013; border:1px solid var(--line); border-radius:4px; overflow:hidden; }
+  .pbar i{ display:block; height:100%; width:0%; background:linear-gradient(90deg,var(--orange),var(--amber)); }
+  .pnum{ font-family:var(--mono); font-size:10px; color:var(--dim); margin-top:8px; letter-spacing:1px; }
+  .pnum span{ color:var(--bone); }
+  .side-meta{ font-family:var(--mono); font-size:9px; letter-spacing:1.5px; color:var(--dim); line-height:2; }
+  .side-meta i{ font-style:normal; color:var(--acid); }
+
+  /* ===== ГЕРОЙ ===== */
+  .hero{ position:relative; border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    background:linear-gradient(135deg,#151a21 0%,#10141a 55%,#131018 100%);
+    padding:34px 250px 30px 34px;
   }
-  .toc li:last-child{ border-bottom:none; }
-  .toc li::before{
-    content:counter(toc,decimal-leading-zero);
-    font-weight:700;
-    color:var(--gold);
-    font-size:10.5pt;
-    min-width:28px;
+  .hero::before{ content:""; position:absolute; inset:0; pointer-events:none;
+    background:
+      radial-gradient(420px 260px at 85% 18%, rgba(255,106,0,.15), transparent 60%),
+      radial-gradient(360px 240px at 8% 100%, rgba(76,195,255,.10), transparent 60%);
   }
-  .toc a{
-    color:var(--navy2);
-    text-decoration:none;
-    font-size:11pt;
+  .hero > *{ position:relative; }
+  .hin{ animation:rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes rise{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:none; } }
+  .hero-kick{ font-family:var(--mono); font-size:10px; letter-spacing:2.5px; color:var(--cyan); margin-bottom:14px; }
+  .hero h1{ font-family:var(--disp); font-weight:400; text-transform:uppercase; line-height:1.04; letter-spacing:1px;
+    font-size:clamp(38px,6.5vw,68px);
   }
-  .toc a:hover{ color:var(--navy); text-decoration:underline; }
+  .h1a{ display:block; color:var(--bone); }
+  .h1b{ display:block; color:transparent; -webkit-text-stroke:1.5px var(--orange); }
+  @supports not (-webkit-text-stroke:1px red){ .h1b{ color:var(--orange); } }
+  .stamps{ display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 20px; }
+  .stamp{ font-family:var(--mono); font-size:9.5px; letter-spacing:1.5px; color:var(--mut);
+    border:1px solid var(--line2); border-radius:4px; padding:5px 10px;
+    display:inline-flex; align-items:center; gap:7px;
+  }
+  .stamp.live{ color:var(--acid); border-color:rgba(163,230,53,.4); }
+  .stamp.live::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--acid);
+    box-shadow:0 0 9px var(--acid); animation:led 2.2s ease-in-out infinite;
+  }
+  .meta-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; }
+  .meta-cell{ border:1px solid var(--line); background:rgba(255,255,255,.02); border-radius:8px; padding:10px 12px; }
+  .meta-cell span{ display:block; font-family:var(--mono); font-size:8.5px; letter-spacing:1.5px; color:var(--dim); margin-bottom:4px; }
+  .meta-cell b{ font-size:13px; font-weight:700; color:var(--bone); }
+  .stats{ display:flex; flex-wrap:wrap; gap:26px; margin-top:20px; }
+  .stat b{ display:block; font-family:var(--disp); font-weight:400; font-size:27px; line-height:1.1; }
+  .stat span{ font-family:var(--mono); font-size:8.5px; letter-spacing:1.5px; color:var(--dim); }
+  .stat:nth-child(1) b{ color:var(--orange); }
+  .stat:nth-child(2) b{ color:var(--cyan); }
+  .stat:nth-child(3) b{ color:var(--red); }
+  .stat:nth-child(4) b{ color:var(--acid); }
+  .jumps{ display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+  .jump{ font-family:var(--mono); font-size:10px; letter-spacing:1.2px; text-transform:uppercase;
+    color:var(--txt); text-decoration:none; padding:7px 13px;
+    border:1px solid var(--line2); border-radius:999px;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:border-color .2s, color .2s, background .2s, transform .15s;
+  }
+  .jump::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--j); box-shadow:0 0 8px var(--j); }
+  .jump:hover{ border-color:var(--j); color:var(--bone); background:rgba(255,255,255,.03); transform:translateY(-1px); }
+  p.lead{ margin-top:18px; color:var(--mut); font-size:13.5px; max-width:660px; }
+  p.lead strong{ color:var(--bone); }
+  .hero-emblem{ position:absolute; top:26px; right:26px; width:190px; height:190px; opacity:.95; }
+  .spin{ animation:rot 9s linear infinite; transform-origin:100px 100px; }
+  @keyframes rot{ to{ transform:rotate(360deg); } }
+  .pulse{ animation:led 2s ease-in-out infinite; }
+
+  /* ===== БЕГУЩАЯ СТРОКА ===== */
+  .ticker{ margin:22px 0 6px; border:1px solid var(--line); border-radius:8px; background:#0f1318; overflow:hidden; }
+  .ticker-track{ display:flex; width:max-content; animation:tick 46s linear infinite; }
+  .ticker:hover .ticker-track{ animation-play-state:paused; }
+  @keyframes tick{ to{ transform:translateX(-50%); } }
+  .ticker-group{ display:flex; align-items:center; padding:9px 0; white-space:nowrap;
+    font-family:var(--mono); font-size:10px; letter-spacing:1.5px; color:var(--mut);
+  }
+  .ticker-group b{ color:var(--amber); font-weight:700; }
+  .ticker-group em{ font-style:normal; color:var(--orange); margin:0 18px; }
 
   /* ===== РАЗДЕЛЫ ===== */
-  h2{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    font-size:14.5pt;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    color:var(--navy);
-    margin:46px 0 20px;
-    padding-bottom:12px;
-    border-bottom:2px solid var(--navy);
-    position:relative;
-    page-break-after:avoid;
+  .ch-head{ position:relative; margin:58px 0 20px; padding:6px 0 16px; border-bottom:1px solid var(--line); overflow:hidden; }
+  .chapter:first-of-type .ch-head{ margin-top:40px; }
+  .ch-kick{ font-family:var(--mono); font-size:10px; letter-spacing:2.5px; color:var(--acc); margin-bottom:8px; }
+  .ch-head h2{ font-family:var(--disp); font-weight:400; font-size:clamp(20px,2.6vw,28px); letter-spacing:.5px;
+    text-transform:uppercase; color:var(--bone); line-height:1.25; max-width:82%; position:relative;
   }
-  h2::after{
-    content:"";
-    position:absolute;
-    left:0; bottom:-2px;
-    width:70px; height:2px;
-    background:var(--gold);
+  .ch-num{ position:absolute; right:0; top:-24px; font-family:var(--disp); font-size:96px; line-height:1;
+    color:transparent; -webkit-text-stroke:1px var(--line2); opacity:.7; pointer-events:none;
   }
-  h2 .num{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:38px;height:38px;
-    border-radius:50%;
-    background:linear-gradient(135deg,var(--navy),var(--navy2));
-    color:var(--gold-l);
-    font-size:14pt;
-    font-weight:700;
-    box-shadow:0 4px 10px rgba(18,38,63,.3);
-    flex-shrink:0;
+  .ch-tape{ margin-top:14px; height:5px; width:120px; opacity:.85;
+    background:repeating-linear-gradient(-45deg, var(--acc) 0 10px, transparent 10px 20px);
   }
 
-  h3{
-    font-size:12.5pt;
-    color:var(--navy2);
-    margin:26px 0 12px;
-    padding:8px 14px;
-    background:linear-gradient(90deg,rgba(18,38,63,.06),transparent);
-    border-left:4px solid var(--gold);
-    border-radius:0 6px 6px 0;
-    page-break-after:avoid;
+  /* ===== СТАТЬИ ===== */
+  .art{ position:relative; border:1px solid var(--line); border-radius:10px; margin:14px 0;
+    background:linear-gradient(180deg,#151a20,#11151a);
+    transition:border-color .2s, transform .2s, box-shadow .2s;
   }
-  h3 .art{ color:var(--gold); font-weight:700; margin-right:4px; }
+  .art::before,.art::after{ content:""; position:absolute; width:14px; height:14px; opacity:.5; transition:opacity .2s; pointer-events:none; }
+  .art::before{ top:-1px; left:-1px; border-top:2px solid var(--acc); border-left:2px solid var(--acc); }
+  .art::after{ bottom:-1px; right:-1px; border-bottom:2px solid var(--acc); border-right:2px solid var(--acc); }
+  .art:hover{ border-color:var(--acc-line); transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,.45); }
+  .art:hover::before,.art:hover::after{ opacity:1; }
+  .art-head{ display:flex; align-items:center; gap:12px; padding:13px 16px;
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(90deg, var(--acc-soft), transparent 65%);
+    border-radius:10px 10px 0 0;
+  }
+  .art-num{ font-family:var(--mono); font-size:9.5px; letter-spacing:1.5px; color:var(--acc);
+    border:1px solid var(--acc-line); background:var(--acc-soft);
+    padding:4px 8px; border-radius:4px; white-space:nowrap; flex-shrink:0;
+  }
+  .art-head h3{ font-family:var(--disp); font-weight:400; font-size:14px; letter-spacing:.5px;
+    text-transform:uppercase; color:var(--bone); line-height:1.4;
+  }
+  .acts{ margin-left:auto; display:flex; gap:6px; flex-shrink:0; }
+  .acts button{ width:28px; height:28px; border-radius:7px; cursor:pointer;
+    background:#0d1013; border:1px solid var(--line2); color:var(--mut);
+    display:inline-flex; align-items:center; justify-content:center;
+    transition:background .15s, color .15s, border-color .15s, transform .15s;
+  }
+  .acts button:hover{ background:var(--acc-soft); color:var(--acc); border-color:var(--acc-line); transform:translateY(-1px); }
+  .art-body{ padding:16px 20px 18px; }
+  .art-body p{ margin:8px 0; font-size:14.5px; }
+  .art-body ol,.art-body ul{ margin:8px 0; padding-left:24px; }
+  .art-body li{ margin:8px 0; font-size:14.5px; }
+  .art-body li::marker{ color:var(--acc); font-family:var(--mono); font-weight:700; font-size:.9em; }
+  strong{ color:var(--bone); font-weight:700; }
+  p.qblock{ font-family:var(--mono); font-size:10px; letter-spacing:2px; color:var(--acc);
+    margin:20px 0 8px; padding-left:10px; border-left:3px solid var(--acc); text-transform:uppercase;
+  }
 
-  /* ===== ТЕКСТ ===== */
-  p{ margin:8px 0; text-align:justify; }
-  ol,ul{ margin:8px 0; padding-left:26px; }
-  li{ margin:6px 0; text-align:justify; }
-  li::marker{ color:var(--navy2); font-weight:700; }
-  strong{ color:var(--navy); }
+  mark{ background:var(--amber); color:#111; border-radius:3px; padding:0 1px; }
+  mark.cur{ background:var(--orange); color:#0b0d10; outline:2px solid rgba(255,106,0,.5); }
 
   /* ===== ТАБЛИЦЫ ===== */
-  table{
-    width:100%;
-    border-collapse:separate;
-    border-spacing:0;
-    margin:14px 0;
-    font-size:10.8pt;
-    border:1px solid var(--line);
-    border-radius:8px;
-    overflow:hidden;
-    box-shadow:0 2px 10px rgba(18,38,63,.07);
+  .tbl{ border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#12161b; margin:12px 0; }
+  table{ width:100%; border-collapse:collapse; font-size:13.5px; }
+  th{ font-family:var(--mono); font-size:9.5px; letter-spacing:1.5px; text-transform:uppercase;
+    padding:10px 14px; background:var(--bg3); color:var(--mut); border-bottom:1px solid var(--line2); text-align:left;
   }
-  th,td{
-    padding:10px 14px;
-    vertical-align:top;
-    text-align:left;
-    border-bottom:1px solid var(--line);
+  td{ padding:10px 14px; border-bottom:1px solid var(--line); color:var(--txt); vertical-align:top; }
+  tr:last-child td{ border-bottom:0; }
+  tbody tr:nth-child(even) td{ background:#151a20; }
+  tbody tr:hover td{ background:var(--acc-soft); }
+  td:first-child{ font-family:var(--mono); font-weight:700; color:var(--acc); width:64px; text-align:center; border-right:1px solid var(--line); }
+
+  blockquote{ border:1px solid var(--line); border-left:3px solid var(--acc); background:#12161b;
+    padding:16px 20px; border-radius:8px; margin:12px 0;
   }
-  th{
-    background:linear-gradient(135deg,var(--navy),var(--navy2));
-    color:#fff;
-    font-weight:600;
-    letter-spacing:.6px;
-    font-size:10.5pt;
+  blockquote p{ margin:7px 0; font-size:14px; }
+
+  /* ===== ТРЕВОГА / ЗАМЕТКА ===== */
+  .alert{ position:relative; border:1px solid rgba(229,72,77,.5); border-radius:10px; overflow:hidden;
+    background:linear-gradient(180deg, rgba(229,72,77,.13), rgba(229,72,77,.04));
+    padding:24px 18px 15px; margin:14px 0;
   }
-  tr:last-child td{ border-bottom:none; }
-  tbody tr:nth-child(even) td{ background:#f6f8fb; }
-  td:first-child{
-    text-align:center;
-    font-weight:700;
-    color:var(--gold);
-    background:rgba(201,162,39,.05);
-    width:70px;
+  .alert::before{ content:""; position:absolute; top:0; left:0; right:0; height:7px;
+    background:repeating-linear-gradient(-45deg, var(--red-deep) 0 12px, #1a0d0f 12px 24px);
+    animation:hz 1.4s linear infinite;
+  }
+  @keyframes hz{ to{ background-position:33.94px 0; } }
+  .alert b{ display:block; font-family:var(--disp); font-weight:400; font-size:13px; letter-spacing:1.5px; color:#ff8a8a; margin-bottom:6px; }
+  .alert p{ color:#ffc9c9; font-size:14px; margin:0; }
+  .note{ display:flex; gap:11px; align-items:flex-start; border:1px solid rgba(76,195,255,.35);
+    border-left:3px solid var(--cyan); background:rgba(76,195,255,.07); color:#bfe6ff;
+    padding:14px 16px; border-radius:8px; margin:14px 0; font-size:13.5px;
+  }
+  .note::before{ content:"⬡"; color:var(--cyan); flex-shrink:0; }
+
+  /* ===== ЛЕСТНИЦА НАКАЗАНИЙ ===== */
+  .ladder{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin:16px 0; }
+  .step{ position:relative; border:1px solid var(--line); border-radius:10px; background:var(--bg2);
+    padding:18px 16px 15px; overflow:hidden; transition:transform .2s, box-shadow .2s, border-color .2s;
+  }
+  .step::before{ content:""; position:absolute; top:0; left:0; right:0; height:3px; background:var(--sv); }
+  .step:hover{ transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,.5); border-color:var(--line2); }
+  .step i.g{ position:absolute; right:10px; top:8px; font-family:var(--disp); font-style:normal; font-size:44px;
+    line-height:1; color:transparent; -webkit-text-stroke:1px var(--line2); pointer-events:none;
+  }
+  .step .lv{ font-family:var(--mono); font-size:8.5px; letter-spacing:2px; color:var(--sc); }
+  .step h4{ font-family:var(--disp); font-weight:400; font-size:14px; letter-spacing:1px; text-transform:uppercase;
+    color:var(--bone); margin:8px 0 6px;
+  }
+  .step p{ font-size:12.5px; color:var(--mut); margin:0; }
+  .step.s1{ --sv:linear-gradient(90deg,#ffb020,#ffd166); --sc:var(--amber); }
+  .step.s2{ --sv:linear-gradient(90deg,#ff8a00,#ff6a00); --sc:var(--orange); }
+  .step.s3{ --sv:linear-gradient(90deg,#ff6b6b,#e5484d); --sc:var(--red); }
+  .step.s4{ --sv:linear-gradient(90deg,#e5484d,#3a0d10); --sc:var(--red); background:#150a0c; border-color:rgba(229,72,77,.5); }
+
+  /* ===== ПРАВИЛА СКЛАДА ===== */
+  .rule{ border:1px solid var(--line); border-radius:10px; background:#12161b; overflow:hidden; margin:14px 0; }
+  .rule-head{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding:12px 16px;
+    background:#171d24; border-bottom:1px solid var(--line);
+  }
+  .rule-ico{ width:34px; height:34px; border:1px solid var(--rc); border-radius:8px; flex-shrink:0;
+    background:rgba(255,255,255,.03); color:var(--rc);
+    display:inline-flex; align-items:center; justify-content:center;
+    box-shadow:0 0 14px -4px var(--rc);
+  }
+  .rule-head b{ font-family:var(--disp); font-weight:400; font-size:12.5px; letter-spacing:1px; text-transform:uppercase; color:var(--bone); }
+  .rule-head .tag{ margin-left:auto; }
+  .rule-body{ padding:14px 16px; }
+  .rule-body p{ margin:8px 0; font-size:14px; }
+  .rule-body ul{ margin:8px 0; padding-left:22px; }
+  .rule-body li{ margin:9px 0; font-size:14px; }
+  .rule-body li::marker{ color:var(--rc); }
+
+  .tag{ font-family:var(--mono); font-size:9px; letter-spacing:1.2px; padding:4px 9px; border-radius:4px;
+    border:1px solid; display:inline-flex; align-items:center; gap:6px; white-space:nowrap; vertical-align:middle;
+  }
+  .tag::before{ content:""; width:6px; height:6px; border-radius:50%; background:currentColor; box-shadow:0 0 8px currentColor; flex-shrink:0; }
+  .tag.ok{ color:var(--acid); border-color:rgba(163,230,53,.45); background:rgba(163,230,53,.08); }
+  .tag.log{ color:var(--amber); border-color:rgba(255,176,32,.45); background:rgba(255,176,32,.08); }
+  .tag.stop{ color:var(--red); border-color:rgba(229,72,77,.5); background:rgba(229,72,77,.10); }
+
+  /* ===== ОФИЦЕРСКАЯ ===== */
+  .ocards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:16px 0; }
+  .ocard{ border:1px solid var(--line); border-radius:10px; padding:16px;
+    background:linear-gradient(180deg,#161b21,#12161b);
+    transition:transform .2s, box-shadow .2s, border-color .2s;
+  }
+  .ocard:hover{ transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,.5); border-color:rgba(76,195,255,.45); }
+  .oico{ width:34px; height:34px; border:1px solid rgba(76,195,255,.4); border-radius:8px; color:var(--cyan);
+    background:rgba(76,195,255,.07); display:inline-flex; align-items:center; justify-content:center; margin-bottom:10px;
+  }
+  .ocard h4{ font-family:var(--disp); font-weight:400; font-size:12.5px; letter-spacing:1px; text-transform:uppercase; color:var(--bone); margin-bottom:7px; }
+  .ocard p{ font-size:13px; color:var(--mut); margin:0; }
+
+  /* ===== ПОДПИСИ / ПОДВАЛ ===== */
+  .sign{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-top:44px; }
+  .plate{ border:1px solid var(--line); border-radius:10px; background:var(--bg1); padding:16px; }
+  .plate span{ font-family:var(--mono); font-size:8.5px; letter-spacing:1.5px; color:var(--dim); display:block; }
+  .plate b{ display:block; font-size:13px; color:var(--bone); margin-top:5px; }
+  .sline{ margin-top:28px; border-bottom:1px dashed var(--line2); }
+  .plate small{ display:block; font-family:var(--mono); font-size:8.5px; letter-spacing:1px; color:var(--dim); margin-top:6px; }
+  .approve{ align-self:center; justify-self:center; border:2px solid rgba(229,72,77,.6); color:var(--red);
+    font-family:var(--disp); font-size:13px; letter-spacing:2px; padding:12px 18px; border-radius:6px;
+    transform:rotate(-5deg); text-align:center; opacity:.9;
+    box-shadow:inset 0 0 24px rgba(229,72,77,.12);
+  }
+  .approve span{ display:block; font-family:var(--mono); font-size:9px; letter-spacing:1.5px; margin-top:4px; color:var(--red); }
+  .footer{ display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;
+    margin-top:40px; padding-top:16px; border-top:1px solid var(--line);
+    font-family:var(--mono); font-size:9.5px; letter-spacing:2px; color:var(--dim);
+  }
+  .footer i{ font-style:normal; color:var(--orange); }
+
+  /* ===== ПЛАВАЮЩИЕ ===== */
+  #totop{ position:fixed; right:22px; bottom:22px; z-index:40; width:46px; height:46px; border-radius:50%; cursor:pointer;
+    background:#171d24; border:1px solid rgba(255,106,0,.6); color:var(--orange);
+    display:flex; align-items:center; justify-content:center; box-shadow:0 10px 26px rgba(0,0,0,.5);
+    opacity:0; transform:translateY(14px); pointer-events:none;
+    transition:opacity .25s, transform .25s, background .2s, color .2s;
+  }
+  #totop.show{ opacity:1; transform:none; pointer-events:auto; }
+  #totop:hover{ background:linear-gradient(135deg,var(--orange),var(--amber)); color:#0b0d10; }
+  #toast{ position:fixed; left:50%; bottom:26px; z-index:60; transform:translate(-50%,16px); max-width:92vw;
+    background:#171d24; border:1px solid var(--amber); color:var(--bone); border-radius:9px; padding:11px 20px;
+    font-family:var(--mono); font-size:11px; letter-spacing:.5px; text-align:center;
+    box-shadow:0 14px 34px rgba(0,0,0,.55); opacity:0; pointer-events:none; transition:opacity .25s, transform .25s;
+  }
+  #toast.show{ opacity:1; transform:translate(-50%,0); }
+
+  .js .reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+  .js .reveal.in{ opacity:1; transform:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    html{ scroll-behavior:auto; }
+    .js .reveal{ opacity:1; transform:none; }
+    .hin{ opacity:1; }
   }
 
-  /* ===== БЛОКИ ===== */
-  blockquote{
-    position:relative;
-    background:linear-gradient(180deg,#f7f9fc,#ffffff);
-    border:1px solid var(--line);
-    border-left:6px solid var(--navy);
-    border-radius:0 10px 10px 0;
-    margin:18px 0;
-    padding:22px 26px 22px 30px;
-    font-style:italic;
-    color:#24364d;
-    font-size:10.8pt;
-    box-shadow:0 2px 10px rgba(18,38,63,.06);
+  /* ===== АДАПТИВ ===== */
+  @media (max-width:1023px){
+    :root{ --head-h:106px; }
+    .shell{ grid-template-columns:minmax(0,1fr); }
+    .side{ display:none; }
+    .chips{ display:flex; }
   }
-  blockquote::before{
-    content:"❝";
-    position:absolute;
-    top:6px; left:10px;
-    font-size:26pt;
-    color:var(--gold);
-    opacity:.35;
-    font-style:normal;
+  @media (max-width:900px){
+    .hero{ padding:26px 22px 24px; }
+    .hero-emblem{ display:none; }
   }
-  blockquote p{ margin:6px 0; }
+  @media (max-width:760px){
+    .brand .bt span{ display:none; }
+    .search kbd{ display:none; }
+    .print .pt{ display:none; }
+    .print{ padding:8px 10px; }
+    .shell{ padding-left:12px; padding-right:12px; }
+    .hero{ padding:22px 16px 20px; }
+    .ch-num{ font-size:64px; top:-14px; }
+    .ch-head h2{ max-width:100%; }
+    .art-head{ flex-wrap:wrap; padding:12px; }
+    .art-head h3{ font-size:12.5px; }
+    .art-body{ padding:14px 14px 16px; }
+    th,td{ padding:8px 10px; }
+    td:first-child{ width:48px; }
+    .stats{ gap:16px; }
+    #totop{ right:14px; bottom:14px; }
+  }
+  @media (hover:none){ .acts button{ opacity:1; } }
 
-  .warn{
-    display:flex;
-    gap:14px;
-    align-items:flex-start;
-    background:linear-gradient(180deg,#fff5f5,#fff);
-    border:1px solid #e6b8b8;
-    border-left:6px solid #b23b3b;
-    border-radius:0 10px 10px 0;
-    padding:16px 20px;
-    margin:18px 0;
-    color:#7a1f1f;
-    font-weight:700;
-    font-size:10.8pt;
-  }
-  .warn::before{ content:"⚠"; font-size:16pt; line-height:1; }
-
-  .note{
-    display:flex;
-    gap:14px;
-    align-items:flex-start;
-    background:linear-gradient(180deg,#eef6ff,#fff);
-    border:1px solid #bcd3ea;
-    border-left:6px solid var(--navy2);
-    border-radius:0 10px 10px 0;
-    padding:16px 20px;
-    margin:18px 0;
-    color:#1e3a5f;
-    font-size:10.8pt;
-  }
-  .note::before{ content:"✦"; font-size:14pt; color:var(--gold); line-height:1; }
-
-  /* ===== КОЛОНТИТУЛ ===== */
-  .footer{
-    margin-top:60px;
-    padding-top:16px;
-    border-top:2px solid var(--navy);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:9pt;
-    letter-spacing:2px;
-    color:var(--muted);
-    text-transform:uppercase;
-  }
-  .footer .dot{ color:var(--gold); font-size:12pt; }
-
+  /* ===== ПЕЧАТЬ ===== */
   @media print{
-    body{ background:#fff; padding:0; }
-    .page{ box-shadow:none; border-radius:0; padding:0; max-width:100%; }
-    .page::before{ display:none; }
-    .cover{ page-break-after:always; }
-    h2,h3{ page-break-after:avoid; }
-    table,blockquote,.warn,.note{ page-break-inside:avoid; }
+    .nav,.side,.ticker,.acts,#totop,#toast,.bg,.grain,.scan,.hero-emblem,.jumps,.ch-num,.approve{ display:none !important; }
+    html{ scrollbar-width:none; }
+    body{ background:#fff; color:#111; font-size:11pt; }
+    .shell{ display:block; max-width:100%; padding:0; }
+    .hero{ border:1px solid #bbb; background:#fff; padding:20px; }
+    .hero::before{ display:none; }
+    .hin{ animation:none; }
+    .h1a{ color:#111; } .h1b{ color:#555; -webkit-text-stroke:0; }
+    .hero-kick,.ch-kick{ color:#555; }
+    .stamp,.meta-cell{ border-color:#bbb; background:#fff; color:#333; }
+    .stamp.live{ color:#1b5e20; } .stamp.live::before{ display:none; }
+    .meta-cell b,.stat b{ color:#111; }
+    .meta-cell span,.stat span,.side-label{ color:#555; }
+    p.lead{ color:#333; }
+    .ch-head{ margin:26px 0 12px; border-color:#bbb; }
+    .ch-head h2{ color:#111; max-width:100%; }
+    .ch-tape{ background:#999; height:3px; }
+    .art{ border:1px solid #bbb; background:#fff; box-shadow:none; }
+    .art::before,.art::after{ display:none; }
+    .art-head{ background:#f2f2f2; border-color:#bbb; }
+    .art-head h3{ color:#111; }
+    .art-num{ color:#333; border-color:#999; background:#eee; }
+    .art-body p,.art-body li,td,.rule-body p,.rule-body li{ color:#111; }
+    strong{ color:#000; }
+    .art-body li::marker,.rule-body li::marker{ color:#333; }
+    p.qblock{ color:#333; border-color:#666; }
+    .tbl,table{ border-color:#bbb; background:#fff; }
+    th{ background:#eee; color:#333; border-color:#bbb; }
+    td{ border-color:#ddd; }
+    td:first-child{ color:#333; border-color:#ddd; }
+    tbody tr:nth-child(even) td{ background:#fafafa; }
+    blockquote{ background:#fafafa; border-color:#bbb; border-left-color:#666; }
+    blockquote p{ color:#222; }
+    .alert{ background:#fff; border-color:#999; padding-top:15px; }
+    .alert::before{ display:none; }
+    .alert b{ color:#000; } .alert p{ color:#222; }
+    .note{ background:#fafafa; border-color:#999; color:#222; }
+    .note::before{ color:#555; }
+    .step{ background:#fff; border-color:#bbb; box-shadow:none; }
+    .step::before,.step i.g{ display:none; }
+    .step h4{ color:#000; } .step p{ color:#222; } .step .lv{ color:#333; }
+    .rule{ border-color:#bbb; background:#fff; }
+    .rule-head{ background:#f2f2f2; border-color:#bbb; }
+    .rule-head b{ color:#000; }
+    .rule-ico,.oico{ display:none; }
+    .tag{ color:#333 !important; border-color:#999 !important; background:#eee !important; }
+    .tag::before{ display:none; }
+    .ocard{ background:#fff; border-color:#bbb; box-shadow:none; }
+    .ocard h4{ color:#000; } .ocard p{ color:#222; }
+    .plate{ background:#fff; border-color:#bbb; }
+    .plate b{ color:#000; } .plate span,.plate small{ color:#555; }
+    .sline{ border-color:#999; }
+    .footer{ color:#555; border-color:#bbb; }
+    .js .reveal{ opacity:1 !important; transform:none !important; }
+    mark{ background:none; color:inherit; outline:none; }
+    a{ color:inherit; text-decoration:none; }
+    h2,h3,.art-head{ page-break-after:avoid; }
+    .step,.rule,.ocard,.plate,.alert,.note,blockquote{ page-break-inside:avoid; }
   }
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- ТИТУЛЬНЫЙ ЛИСТ -->
-  <div class="cover">
-    <div class="frame">
-      <div class="emblem">⚜</div>
-      <h1>Устав<br><span>Кооператива</span></h1>
-      <div class="subtitle">Внутренний нормативный документ фракции</div>
-      <div class="ornament"><b>❖</b></div>
-      <div class="meta">
-        <div><strong>Дата составления:</strong> 23 ноября 2026 г.</div>
-        <div><strong>Статус документа:</strong> действующий</div>
-        <div><strong>Область действия:</strong> все участники Кооператива</div>
-      </div>
-      <div class="stamp">Официальный документ</div>
+<div class="bg" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="scan" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-row">
+    <a class="brand" href="#top" aria-label="К началу документа">
+      <svg viewBox="0 0 24 24" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2.5 20.2 7.25v9.5L12 21.5 3.8 16.75v-9.5Z"/><circle cx="12" cy="12" r="3.6"/></svg>
+      <span class="bt"><b>КООПЕРАТИВ</b><span>УСТАВ ФРАКЦИИ · <i>● ДЕЙСТВУЮЩИЙ</i></span></span>
+    </a>
+    <div class="search">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+      <input id="q" type="text" placeholder="Поиск по уставу…" autocomplete="off" aria-label="Поиск по уставу">
+      <span class="cnt" id="cnt"></span>
+      <kbd>/</kbd>
+      <button type="button" id="sprev" title="Предыдущее совпадение (Shift+Enter)">‹</button>
+      <button type="button" id="snext" title="Следующее совпадение (Enter)">›</button>
+      <button type="button" id="sclr" title="Очистить (Esc)">✕</button>
     </div>
+    <button type="button" class="print" id="printBtn" title="Печать или сохранение в PDF">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg>
+      <span class="pt">PDF / ПЕЧАТЬ</span>
+    </button>
   </div>
+  <nav class="chips" id="chips" aria-label="Разделы устава">
+    <a class="chip" href="#r1">01·ОБЩИЕ</a>
+    <a class="chip" href="#r2">02·ПРАВА</a>
+    <a class="chip" href="#r3">03·БАЗА</a>
+    <a class="chip" href="#r4">04·ПРИОРИТЕТЫ</a>
+    <a class="chip" href="#r5">05·ПРИЁМ</a>
+  </nav>
+  <div class="prog" id="prog"></div>
+</header>
 
-  <!-- ОГЛАВЛЕНИЕ -->
-  <div class="toc">
-    <h4>Содержание</h4>
-    <ol>
-      <li><a href="#r1">Общие положения</a></li>
-      <li><a href="#r2">Права и обязанности участников Кооператива</a></li>
-      <li><a href="#r3">Режим базы и строительная деятельность</a></li>
-      <li><a href="#r4">Собеседование и приём в Кооператив</a></li>
-    </ol>
+<main class="shell" id="top">
+
+  <aside class="side" aria-label="Навигация по документу">
+    <div class="side-box">
+      <div class="side-label">// НАВИГАЦИЯ</div>
+      <nav>
+        <a class="snav" href="#r1"><i>01</i><span>Общие положения</span></a>
+        <a class="snav" href="#r2"><i>02</i><span>Права и обязанности</span></a>
+        <a class="snav" href="#r3"><i>03</i><span>База и дисциплина</span></a>
+        <div class="ssub">
+          <a href="#st8">↳ Дисциплина</a>
+          <a href="#st9">↳ Склад</a>
+          <a href="#st10">↳ Офицерская</a>
+        </div>
+        <a class="snav" href="#r4"><i>04</i><span>Приоритеты задач</span></a>
+        <a class="snav" href="#r5"><i>05</i><span>Приём в Кооператив</span></a>
+      </nav>
+    </div>
+    <div class="side-box">
+      <div class="side-label">// ПРОГРЕСС ЧТЕНИЯ</div>
+      <div class="pbar"><i id="pfill"></i></div>
+      <div class="pnum"><span id="ppct">0%</span> ДОКУМЕНТА</div>
+    </div>
+    <div class="side-box side-meta">
+      РЕД. 25.11.2026<br>СТАТУС: <i>● LIVE</i><br>ДОПУСК: ВСЕ УЧАСТНИКИ
+    </div>
+  </aside>
+
+  <div class="content" id="doc">
+
+    <!-- ГЕРОЙ -->
+    <section class="hero">
+      <svg class="hero-emblem" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+        <circle cx="100" cy="100" r="80" stroke="#2a313a" stroke-width="1.5" stroke-dasharray="4 6"/>
+        <circle class="spin" cx="100" cy="100" r="80" stroke="#ff6a00" stroke-width="2" stroke-linecap="round" stroke-dasharray="70 433"/>
+        <path d="M160 100 130 152 70 152 40 100 70 48 130 48Z" stroke="#39424d" stroke-width="1.5"/>
+        <path d="M140 100 120 134.6 80 134.6 60 100 80 65.4 120 65.4Z" stroke="#e9e6dd" stroke-width="1.5" opacity=".8"/>
+        <circle cx="100" cy="100" r="22" stroke="#ff6a00" stroke-width="2"/>
+        <circle class="pulse" cx="100" cy="100" r="4" fill="#a3e635"/>
+        <path d="M100 8v10M100 182v10M8 100h10M182 100h10" stroke="#39424d" stroke-width="1.5"/>
+      </svg>
+      <div class="hero-kick hin" style="animation-delay:.05s">// ВНУТРЕННИЙ НОРМАТИВНЫЙ ДОКУМЕНТ ФРАКЦИИ</div>
+      <h1 class="hin" style="animation-delay:.12s"><span class="h1a">УСТАВ</span><span class="h1b">КООПЕРАТИВА</span></h1>
+      <div class="stamps hin" style="animation-delay:.2s">
+        <span class="stamp live">ДЕЙСТВУЮЩИЙ</span>
+        <span class="stamp">РЕДАКЦИЯ 25.11.2026</span>
+        <span class="stamp">ДОПУСК: ВСЕ УЧАСТНИКИ</span>
+      </div>
+      <div class="meta-grid hin" style="animation-delay:.28s">
+        <div class="meta-cell"><span>ДАТА СОСТАВЛЕНИЯ</span><b>23 ноября 2026</b></div>
+        <div class="meta-cell"><span>ПОСЛЕДНЯЯ РЕДАКЦИЯ</span><b>25 ноября 2026</b></div>
+        <div class="meta-cell"><span>СТАТУС</span><b>Действующий</b></div>
+        <div class="meta-cell"><span>ОБЛАСТЬ ДЕЙСТВИЯ</span><b>Все участники</b></div>
+      </div>
+      <div class="stats hin" id="stats" style="animation-delay:.36s">
+        <div class="stat"><b data-count="16">16</b><span>СТАТЕЙ</span></div>
+        <div class="stat"><b data-count="5">5</b><span>РАЗДЕЛОВ</span></div>
+        <div class="stat"><b data-count="8">8</b><span>ЗАПРЕТОВ</span></div>
+        <div class="stat"><b data-count="12">12</b><span>ВОПРОСОВ ПРОВЕРКИ</span></div>
+      </div>
+      <div class="jumps hin" style="animation-delay:.44s">
+        <a class="jump" href="#st8" style="--j:var(--red)">Дисциплина</a>
+        <a class="jump" href="#st9" style="--j:var(--amber)">Склад</a>
+        <a class="jump" href="#st10" style="--j:var(--cyan)">Офицерская</a>
+        <a class="jump" href="#r5" style="--j:var(--violet)">Приём</a>
+      </div>
+      <p class="lead hin" style="animation-delay:.52s"><strong>Как читать этот документ.</strong> Устав — не формальность и не список угроз. Это договорённость, на которой держится Кооператив: что мы делаем, кто за что отвечает и что будет, если правила нарушены. Прочитайте его один раз целиком — дальше спорных ситуаций почти не останется. Если какой-то пункт непонятен, спросите у заместителя или главы: уточнить заранее всегда дешевле, чем объясняться потом.</p>
+    </section>
+
+    <!-- БЕГУЩАЯ СТРОКА -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <span><b>НЕЗНАНИЕ ПРАВИЛ НЕ ОСВОБОЖДАЕТ ОТ ОТВЕТСТВЕННОСТИ</b></span><em>⬡</em>
+          <span>ПРАВИЛА ЕДИНЫ ДЛЯ ВСЕХ — ОТ НОВИЧКА ДО ГЛАВЫ</span><em>⬡</em>
+          <span><b>ВЗЯЛ СО СКЛАДА — ОТПИШИСЬ В DISCORD</b></span><em>⬡</em>
+          <span>ДОРОГИЕ МАТЕРИАЛЫ — ТОЛЬКО С РАЗРЕШЕНИЯ</span><em>⬡</em>
+          <span><b>КООРДИНАТЫ БАЗЫ — ЗАКРЫТАЯ ИНФОРМАЦИЯ</b></span><em>⬡</em>
+          <span>СНАЧАЛА БЕЗОПАСНОСТЬ — ПОТОМ ЗАДАЧИ</span><em>⬡</em>
+        </div>
+        <div class="ticker-group">
+          <span><b>НЕЗНАНИЕ ПРАВИЛ НЕ ОСВОБОЖДАЕТ ОТ ОТВЕТСТВЕННОСТИ</b></span><em>⬡</em>
+          <span>ПРАВИЛА ЕДИНЫ ДЛЯ ВСЕХ — ОТ НОВИЧКА ДО ГЛАВЫ</span><em>⬡</em>
+          <span><b>ВЗЯЛ СО СКЛАДА — ОТПИШИСЬ В DISCORD</b></span><em>⬡</em>
+          <span>ДОРОГИЕ МАТЕРИАЛЫ — ТОЛЬКО С РАЗРЕШЕНИЯ</span><em>⬡</em>
+          <span><b>КООРДИНАТЫ БАЗЫ — ЗАКРЫТАЯ ИНФОРМАЦИЯ</b></span><em>⬡</em>
+          <span>СНАЧАЛА БЕЗОПАСНОСТЬ — ПОТОМ ЗАДАЧИ</span><em>⬡</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- РАЗДЕЛ 1 -->
+    <section class="chapter" id="r1">
+      <div class="ch-head reveal">
+        <div class="ch-num">01</div>
+        <div class="ch-kick">РАЗДЕЛ 01 // 3 СТАТЬИ</div>
+        <h2>Общие положения</h2>
+        <div class="ch-tape"></div>
+      </div>
+
+      <article class="art reveal" id="st1">
+        <header class="art-head">
+          <span class="art-num">СТ.01</span>
+          <h3>Что такое Устав и зачем он нужен</h3>
+          <div class="acts">
+            <button type="button" data-link="#st1" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <ol>
+            <li><strong>Устав Кооператива</strong> — главный внутренний документ фракции. Он определяет, как мы работаем, как принимаем решения, как делим ресурсы и как отвечаем за свои действия.</li>
+            <li>Задача Устава простая: чтобы у всех были одинаковые правила, а имущество, казна и люди Кооператива были защищены.</li>
+            <li>Устав действует для <strong>всех без исключения</strong> — независимо от должности, ранга, заслуг и того, сколько человек уже состоит во фракции.</li>
+            <li>Каждый участник обязан прочитать Устав и соблюдать его. Ссылка «я не знал» не работает.</li>
+            <li><strong>Незнание правил не освобождает от ответственности.</strong></li>
+            <li>Устав охватывает все направления нашей работы: торговлю, добычу ресурсов, производство и крафт, охрану, содержание базы и внутреннее управление.</li>
+            <li>Правки в Устав вносит <strong>глава Кооператива</strong> либо руководящий состав в установленном им порядке. Об изменениях сообщают всем участникам.</li>
+            <li>Если ситуация не описана в Уставе, решение принимает руководство, исходя из интересов фракции. Такое решение затем оформляется как отдельное распоряжение или новый пункт.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="art reveal" id="st2">
+        <header class="art-head">
+          <span class="art-num">СТ.02</span>
+          <h3>Кто нами управляет</h3>
+          <div class="acts">
+            <button type="button" data-link="#st2" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <ol>
+            <li>Кооператив — добровольное объединение игроков, которое живёт торговлей, производством и общим хозяйством. Мы держимся на взаимопомощи, ответственности и дисциплине.</li>
+            <li><strong>Глава Кооператива (Лидер)</strong> — высшая инстанция. Его слово окончательное по любому вопросу жизни фракции.</li>
+            <li>В руководящий состав также входят:
+              <ul>
+                <li><strong>Заместители главы (Совет заместителей)</strong> — ведут текущие дела, распределяют задачи, разбирают нарушения;</li>
+                <li><strong>Офицеры</strong> — отвечают за отдельные направления работы и следят за порядком на своих участках;</li>
+                <li><strong>Экс-глава Clanzlo_</strong> — Главный советник. Его мнение учитывается при ключевых решениях.</li>
+              </ul>
+            </li>
+            <li>Распоряжения руководства, отданные в рамках полномочий, <strong>обязательны к исполнению</strong>. Сначала выполняем — потом обсуждаем, если есть возражения.</li>
+            <li>Иерархию нужно уважать. Спорить с решением можно и нужно, но по делу и в нормальном тоне — не через саботаж и не через подрыв авторитета руководства перед остальными.</li>
+            <li>Руководство тоже связано Уставом. Должность даёт полномочия, а не индульгенцию.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="art reveal" id="st3">
+        <header class="art-head">
+          <span class="art-num">СТ.03</span>
+          <h3>Деньги фракции: гайки</h3>
+          <div class="acts">
+            <button type="button" data-link="#st3" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <ol>
+            <li>Внутренняя расчётная единица Кооператива — <strong>гайки</strong>.</li>
+            <li>Гайками мы пользуемся, когда:
+              <ul>
+                <li>рассчитываемся внутри фракции;</li>
+                <li>платим за работу, поставки и выполненные задачи;</li>
+                <li>назначаем штрафы;</li>
+                <li>проводим любые другие внутренние операции.</li>
+              </ul>
+            </li>
+            <li>Казна — общая. Распоряжаться ею могут только те, кому это разрешено руководством.</li>
+            <li>Любая операция с общими средствами должна быть понятна и подтверждаема: сколько, за что, кому. Мутные схемы и «я потом объясню» не проходят.</li>
+            <li>Минимальные цены на товары устанавливает руководство. Продавать ниже прейскуранта без согласования нельзя — это бьёт по всей экономике фракции.</li>
+          </ol>
+        </div>
+      </article>
+    </section>
+
+    <!-- РАЗДЕЛ 2 -->
+    <section class="chapter" id="r2">
+      <div class="ch-head reveal">
+        <div class="ch-num">02</div>
+        <div class="ch-kick">РАЗДЕЛ 02 // 3 СТАТЬИ</div>
+        <h2>Права и обязанности участников</h2>
+        <div class="ch-tape"></div>
+      </div>
+
+      <article class="art reveal" id="st4">
+        <header class="art-head">
+          <span class="art-num">СТ.04</span>
+          <h3>На что вы имеете право</h3>
+          <div class="acts">
+            <button type="button" data-link="#st4" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <p>Вступая в Кооператив, вы получаете не только обязанности. Ваши права:</p>
+          <div class="tbl"><table>
+            <thead><tr><th>№</th><th>Право</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Участвовать в делах фракции: торговле, добыче, производстве, крафте, охране и общих мероприятиях</td></tr>
+              <tr><td>2</td><td>Знать, что происходит в Кооперативе: получать информацию о правилах, решениях и правках Устава (кроме сведений закрытого доступа)</td></tr>
+              <tr><td>3</td><td>Высказывать мнение и предлагать улучшения — по делу их всегда рассматривают</td></tr>
+              <tr><td>4</td><td>Обращаться к главе, Главному советнику, заместителям и офицерам с вопросом, заявлением, предложением или жалобой</td></tr>
+              <tr><td>5</td><td>На уважительное отношение — и от рядовых участников, и от руководства</td></tr>
+              <tr><td>6</td><td>Знать, в чём вас обвиняют, и дать объяснения, доказательства и возражения <strong>до</strong> вынесения наказания</td></tr>
+              <tr><td>7</td><td>Обжаловать наказание у главы или другого представителя руководства, который не участвовал в первом разборе</td></tr>
+              <tr><td>8</td><td>Расти в ранге и должности, если есть вклад, опыт и соблюдены требования</td></tr>
+              <tr><td>9</td><td>Рассчитывать на помощь фракции — снаряжением, ресурсами, прикрытием — в пределах наших возможностей</td></tr>
+              <tr><td>10</td><td>Спокойно уйти из Кооператива: предупредить руководство и закрыть свои обязательства</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </article>
+
+      <article class="art reveal" id="st5">
+        <header class="art-head">
+          <span class="art-num">СТ.05</span>
+          <h3>Что от вас требуется</h3>
+          <div class="acts">
+            <button type="button" data-link="#st5" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <p>Каждый участник Кооператива обязан:</p>
+          <ol>
+            <li>Выполнять распоряжения <strong>главы, Главного советника, заместителей и офицеров</strong> в рамках их полномочий.</li>
+            <li>Сдавать ресурсы по установленным нормам и в срок, без напоминаний по три раза.</li>
+            <li>Отчитываться о своей работе — торговле, добыче, крафте — в установленные сроки и в установленной форме.</li>
+            <li>Держать в порядке то, за что отвечаете: постройки, склад, торговые точки, станки.</li>
+            <li>Участвовать в защите людей, имущества и территории фракции, когда это нужно.</li>
+            <li>Соблюдать дисциплину и не портить репутацию Кооператива — ни в игре, ни в чатах.</li>
+            <li>Работать на общий результат, а не только на свой карман.</li>
+            <li>Предупреждать заранее, если не можете выйти на связь или выполнить задачу. Отсутствие без предупреждения — самая частая причина конфликтов.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="art reveal" id="st6">
+        <header class="art-head">
+          <span class="art-num">СТ.06</span>
+          <h3>Чего делать нельзя</h3>
+          <div class="acts">
+            <button type="button" data-link="#st6" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <p>Участникам Кооператива <strong>запрещается</strong>:</p>
+          <div class="tbl"><table>
+            <thead><tr><th>Пункт</th><th>Запрет</th></tr></thead>
+            <tbody>
+              <tr><td>6.1</td><td>Продавать ресурсы, товары и материалы ниже минимального прейскуранта без согласования с руководством</td></tr>
+              <tr><td>6.2</td><td>Брать, тратить или присваивать общее имущество — казну, ресурсы склада, снаряжение фракции — без разрешения</td></tr>
+              <tr><td>6.3</td><td>Договариваться и торговать с враждебными фракциями без ведома руководства</td></tr>
+              <tr><td>6.4</td><td>Раскачивать обстановку внутри клана: стравливать людей, устраивать склоки, сеять панику</td></tr>
+              <tr><td>6.5</td><td>Оскорблять участников, провоцировать, переходить на личности и травить кого-либо</td></tr>
+              <tr><td>6.6</td><td>Выносить наружу внутреннюю информацию Кооператива без разрешения руководства</td></tr>
+              <tr><td>6.7</td><td>Сливать координаты, планировку и устройство базы третьим лицам</td></tr>
+              <tr><td>6.8</td><td>Саботировать общие задачи: срывать поставки, дежурства и договорённости без причины</td></tr>
+            </tbody>
+          </table></div>
+          <div class="note">Нарушение любого пункта этой статьи разбирается по системе наказаний из Статьи 8 и фиксируется в документе «Доска нарушений».</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- РАЗДЕЛ 3 -->
+    <section class="chapter" id="r3">
+      <div class="ch-head reveal">
+        <div class="ch-num">03</div>
+        <div class="ch-kick">РАЗДЕЛ 03 // 5 СТАТЕЙ · ЗОНА СТРОГОГО КОНТРОЛЯ</div>
+        <h2>Режим базы. Дисциплина и ответственность</h2>
+        <div class="ch-tape"></div>
+      </div>
+
+      <article class="art reveal" id="st7">
+        <header class="art-head">
+          <span class="art-num">СТ.07</span>
+          <h3>Статус базы и её безопасность</h3>
+          <div class="acts">
+            <button type="button" data-link="#st7" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <ol>
+            <li>База Кооператива — <strong>закрытый объект</strong>. Здесь хранятся наши ресурсы, стоит производство и живут люди фракции. Относитесь к ней соответственно.</li>
+            <li>Координаты, схемы, планировка и любые сведения об устройстве базы <strong>не передаются посторонним</strong> без разрешения руководства. Ни друзьям «из другого клана», ни в общий чат, ни скриншотом.</li>
+            <li>Слив информации о базе — грубое нарушение безопасности. За него предусмотрена <strong>«Чёрная метка»</strong> и исключение из клана.</li>
+            <li>На территории базы действует пропускной режим: посторонние допускаются только с согласия руководства и в сопровождении участника фракции.</li>
+            <li>О любой подозрительной активности рядом с базой — чужие игроки, разведка, попытки зайти внутрь — сразу сообщаем руководству или дежурному офицеру.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="art reveal" id="st8">
+        <header class="art-head">
+          <span class="art-num">СТ.08</span>
+          <h3>Дисциплина и ответственность</h3>
+          <div class="acts">
+            <button type="button" data-link="#st8" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <div class="alert">
+            <b>⚠ ВНИМАНИЕ · КОНТРОЛЬ ТЕРРИТОРИИ</b>
+            <p>За всеми вашими действиями на территории клан-базы ведётся строгий контроль.</p>
+          </div>
+          <p>Мы не любим наказывать, но и бардака на базе не держим. Система простая и одинаковая для всех: сначала замечание, потом официальная запись, потом исключение. Ступени можно перепрыгнуть — если нарушение тяжёлое, разбор начинается не с первого пункта.</p>
+          <div class="ladder">
+            <div class="step s1"><i class="g">1</i><span class="lv">СТУПЕНЬ 01</span><h4>Предупреждение</h4><p>Первое устное замечание. Вам прямо говорят, что именно нарушено и как надо было поступить. Это шанс исправиться без последствий.</p></div>
+            <div class="step s2"><i class="g">2</i><span class="lv">СТУПЕНЬ 02</span><h4>Выговор</h4><p>Официальная запись в личное дело и в «Доску нарушений». Учитывается при повышениях, выдаче ответственных задач и доступе к дорогим ресурсам.</p></div>
+            <div class="step s3"><i class="g">3</i><span class="lv">СТУПЕНЬ 03</span><h4>Кик</h4><p>Исключение из клана. Применяется при повторных нарушениях после выговора либо сразу — за грубые проступки.</p></div>
+            <div class="step s4"><i class="g">✖</i><span class="lv">КРАЙНЯЯ МЕРА</span><h4>Чёрная метка</h4><p>Слив базы, воровство в крупном размере, работа против фракции. Исключение без права вернуться.</p></div>
+          </div>
+          <ol>
+            <li><strong>Незнание правил не освобождает от ответственности.</strong> Санкции применяются ко всем без исключения, независимо от роли и статуса. Будь вы даже администратором — правила едины для всех.</li>
+            <li>Перед наказанием вас выслушают: вы вправе объяснить свою позицию и привести доказательства (Статья 4, п. 6).</li>
+            <li>Наказание можно обжаловать у главы или у того из руководства, кто не участвовал в первом разборе.</li>
+            <li>Все выговоры и метки фиксируются письменно. Устные договорённости «забыли и проехали» не практикуются.</li>
+            <li>Тяжесть нарушения оценивается по последствиям для фракции, а не по симпатиям к человеку.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="art reveal" id="st9">
+        <header class="art-head">
+          <span class="art-num">СТ.09</span>
+          <h3>Правила поведения на складе</h3>
+          <div class="acts">
+            <button type="button" data-link="#st9" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <p>Склад — особое место. Он контролируется строже остальных зданий, потому что там лежит общее имущество.</p>
+
+          <div class="rule" style="--rc:var(--acid);">
+            <div class="rule-head">
+              <span class="rule-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span>
+              <b>Пополнение склада</b>
+              <span class="tag ok">БЕЗ СОГЛАСОВАНИЯ</span>
+            </div>
+            <div class="rule-body">
+              <p>Класть на склад можно <strong>что угодно</strong> — от мусора до ценных ресурсов. Разрешение лидера или зама для этого не нужно: склад пополняется свободно и в любой момент.</p>
+            </div>
+          </div>
+
+          <div class="rule" style="--rc:var(--amber);">
+            <div class="rule-head">
+              <span class="rule-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+              <b>Использование ресурсов</b>
+            </div>
+            <div class="rule-body">
+              <ul>
+                <li><strong>Недорогие крафтовые вещи</strong> <span class="tag log">БРАТЬ МОЖНО + ОТПИСАТЬСЯ</span> — берёте сами, но <strong>обязательно</strong> пишете в Discord, что именно взяли и сколько. Сообщение должно появиться сразу, а не «когда вспомню».</li>
+                <li><strong>Дорогие материалы</strong> <span class="tag stop">ТОЛЬКО С РАЗРЕШЕНИЯ</span> — исключительно с личного разрешения <strong>главы или зама главы</strong>. Молча взял — считается присвоением общего имущества (п. 6.2).</li>
+              </ul>
+              <p>Если сомневаетесь, дорогая вещь или нет, — считайте её дорогой и спросите. Это займёт минуту и снимет все вопросы.</p>
+            </div>
+          </div>
+
+          <div class="rule" style="--rc:var(--cyan);">
+            <div class="rule-head">
+              <span class="rule-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></span>
+              <b>Крафт</b>
+            </div>
+            <div class="rule-body">
+              <p>Все нужные станки уже установлены и являются <strong>общими</strong>. Каждый крафтит себе сам — просить кого-то сделать вещь за вас не требуется.</p>
+              <p>Украсть чужой крафт невозможно: у каждого игрока <strong>свой уникальный тег</strong>. Так что чужие заготовки не трогаем, а свои не путаем.</p>
+            </div>
+          </div>
+
+          <div class="note">Порядок на складе держится на двух вещах: отписался в Discord и спросил разрешение на дорогое. Всё остальное — детали.</div>
+        </div>
+      </article>
+
+      <article class="art reveal" id="st10">
+        <header class="art-head">
+          <span class="art-num">СТ.10</span>
+          <h3>Правила поведения в офицерской</h3>
+          <div class="acts">
+            <button type="button" data-link="#st10" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <p>Офицерская — рабочее место <strong>главы, зама главы и офицеров</strong>. Там обсуждают дела фракции, поэтому заходить туда «просто постоять» не нужно.</p>
+          <div class="ocards">
+            <div class="ocard">
+              <span class="oico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><circle cx="15" cy="12" r="1"/></svg></span>
+              <h4>Приглашение</h4>
+              <p>Если ваше участие нужно — вас позовут лично. Самостоятельно врываться в разговор, перебивать или вставлять реплики без приглашения не принято.</p>
+            </div>
+            <div class="ocard">
+              <span class="oico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <h4>Зона ожидания</h4>
+              <p>В офицерской есть специальные места для ожидания. Если вас пока не вызвали, но вы понадобитесь дальше — спокойно сидите там и не бегайте по базе, чтобы не задерживать обсуждение.</p>
+            </div>
+            <div class="ocard">
+              <span class="oico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m23 9-6 6M17 9l6 6"/></svg></span>
+              <h4>Тишина и секретность</h4>
+              <p>Пока идёт разговор — не шумим и не мешаем. То, что услышали в офицерской, наружу не выносим (п. 6.6).</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="art reveal" id="st11">
+        <header class="art-head">
+          <span class="art-num">СТ.11</span>
+          <h3>Общий порядок на территории базы</h3>
+          <div class="acts">
+            <button type="button" data-link="#st11" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <ol>
+            <li>Убрали за собой — вернули инструмент, закрыли ящики, освободили проход. База должна быть пригодна для работы, а не для полосы препятствий.</li>
+            <li>Не ломаем, не переставляем и не «улучшаем» чужие постройки и станки без согласования с ответственным офицером.</li>
+            <li>Дежурство по периметру — обязанность, а не просьба. График составляет руководство; если не можете выйти, предупреждаете заранее и находите замену.</li>
+            <li>Оружие, взрывчатка и опасные механизмы на территории базы применяются только по назначению и с ведома руководства. «Проверки на своих» запрещены.</li>
+            <li>Конфликты между участниками решаются через офицера или зама, а не криком посреди базы.</li>
+          </ol>
+        </div>
+      </article>
+    </section>
+
+    <!-- РАЗДЕЛ 4 -->
+    <section class="chapter" id="r4">
+      <div class="ch-head reveal">
+        <div class="ch-num">04</div>
+        <div class="ch-kick">РАЗДЕЛ 04 // 2 СТАТЬИ</div>
+        <h2>Приоритеты и порядок выполнения задач</h2>
+        <div class="ch-tape"></div>
+      </div>
+
+      <article class="art reveal" id="st12">
+        <header class="art-head">
+          <span class="art-num">СТ.12</span>
+          <h3>Что важнее чего</h3>
+          <div class="acts">
+            <button type="button" data-link="#st12" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <p>Когда задач несколько и все «срочные», действуем по этой очерёдности:</p>
+          <div class="tbl"><table>
+            <thead><tr><th>Приоритет</th><th>Задача</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Безопасность людей и отражение прямой угрозы базе</td></tr>
+              <tr><td>2</td><td>Экстренные распоряжения главы и уполномоченного руководства</td></tr>
+              <tr><td>3</td><td>Помощь участникам, которые оказались в опасности</td></tr>
+              <tr><td>4</td><td>Сохранность имущества, ресурсов и торговых объектов</td></tr>
+              <tr><td>5</td><td>Плановая работа: добыча, производство, крафт, обслуживание базы</td></tr>
+            </tbody>
+          </table></div>
+          <ol start="2">
+            <li>Если задачи конфликтуют — смотрите таблицу и слушайте руководство. Инициатива приветствуется, самодеятельность в бою — нет.</li>
+            <li>Бросить плановую работу ради задачи более высокого приоритета — <strong>не нарушение</strong>. Наоборот, так и надо.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="art reveal" id="st13">
+        <header class="art-head">
+          <span class="art-num">СТ.13</span>
+          <h3>Когда работу можно остановить</h3>
+          <div class="acts">
+            <button type="button" data-link="#st13" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <ol>
+            <li>Текущие работы приостанавливаются или прекращаются по решению <strong>главы, Главного советника или заместителя</strong> в рамках их полномочий.</li>
+            <li><strong>Уважительные причины остановки:</strong>
+              <ul>
+                <li>прямая угроза базе, имуществу или людям;</li>
+                <li>нападение на базу, склад, торговые точки и другие наши объекты;</li>
+                <li>распоряжение руководства переключиться на более важную задачу;</li>
+                <li>участник фракции попал в беду и нужна помощь;</li>
+                <li>чрезвычайные обстоятельства, мешающие продолжать работу;</li>
+                <li>технические проблемы: вылеты, лаги, потеря соединения и прочее.</li>
+              </ul>
+            </li>
+            <li>При прямой угрозе работы <strong>останавливаются немедленно</strong> — сначала оборона, потом всё остальное.</li>
+            <li>Распоряжение свернуть работы ради защиты объектов выполняется <strong>без обсуждений</strong>.</li>
+            <li>Если продолжить не можете по личным или техническим причинам — <strong>сообщите</strong> ответственному офицеру или руководству. Одно сообщение снимает все претензии.</li>
+            <li>Уйти с задачи молча, без причины и предупреждения — нарушение дисциплины.</li>
+            <li><strong>Не считается нарушением</strong> уход с работ ради приоритетного распоряжения, отражения угрозы или помощи своим.</li>
+            <li>Когда обстоятельства отпали — возвращаемся к обязанностям, если руководство не сказало иначе.</li>
+          </ol>
+        </div>
+      </article>
+    </section>
+
+    <!-- РАЗДЕЛ 5 -->
+    <section class="chapter" id="r5">
+      <div class="ch-head reveal">
+        <div class="ch-num">05</div>
+        <div class="ch-kick">РАЗДЕЛ 05 // 3 СТАТЬИ</div>
+        <h2>Собеседование и приём в Кооператив</h2>
+        <div class="ch-tape"></div>
+      </div>
+
+      <article class="art reveal" id="st14">
+        <header class="art-head">
+          <span class="art-num">СТ.14</span>
+          <h3>Как проходит приём</h3>
+          <div class="acts">
+            <button type="button" data-link="#st14" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <ol>
+            <li>Новых участников принимают <strong>только после собеседования</strong>. Без исключений для друзей и знакомых.</li>
+            <li><strong>Что мы выясняем на собеседовании:</strong>
+              <ul>
+                <li>игровые данные кандидата;</li>
+                <li>сколько времени он реально готов уделять фракции и чем хочет заниматься;</li>
+                <li>знает ли он основные положения Устава;</li>
+                <li>готов ли соблюдать дисциплину;</li>
+                <li>как поведёт себя в спорной или опасной ситуации.</li>
+              </ul>
+            </li>
+            <li>Собеседование проводит глава, заместитель или уполномоченный офицер.</li>
+            <li>Решение объявляется кандидату прямо. Отказ не требует объяснений и не подлежит обжалованию.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="art reveal" id="st15">
+        <header class="art-head">
+          <span class="art-num">СТ.15</span>
+          <h3>Вводный инструктаж кандидата</h3>
+          <div class="acts">
+            <button type="button" data-link="#st15" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <p>Перед вопросами кандидату обязательно рассказывают, куда он пришёл. Примерный текст:</p>
+          <blockquote>
+            <p><strong>Добро пожаловать на собеседование в Кооператив.</strong></p>
+            <p>Мы — объединение игроков, которое живёт торговлей, добычей и производством. У нас своя база, свои станки, своя экономика и свой порядок.</p>
+            <p>Держимся мы на четырёх вещах: <strong>дисциплина, взаимопомощь, ответственность и соблюдение правил</strong>.</p>
+            <p>Внутренняя валюта — <strong>гайки</strong>. Все расчёты, награды и штрафы идут в них.</p>
+            <p>От каждого нужен личный вклад: добывать, торговать, крафтить, дежурить, защищать базу. Пассажиров, которые только берут со склада, мы не держим.</p>
+            <p>Вступая, вы соглашаетесь с Уставом и распоряжениями руководства. Правила одинаковы для всех — от новичка до главы.</p>
+            <p>За воровство, саботаж, слив информации и нарушение порядка есть ответственность — вплоть до исключения. Всё фиксируется в <strong>«Доске нарушений»</strong>.</p>
+            <p>Если вас всё устраивает и вы готовы работать по этим правилам — переходим к вопросам.</p>
+          </blockquote>
+        </div>
+      </article>
+
+      <article class="art reveal" id="st16">
+        <header class="art-head">
+          <span class="art-num">СТ.16</span>
+          <h3>Вопросы для собеседования</h3>
+          <div class="acts">
+            <button type="button" data-link="#st16" title="Скопировать ссылку на статью" aria-label="Скопировать ссылку на статью"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19"/></svg></button>
+            <button type="button" data-text title="Скопировать текст статьи (для Discord)" aria-label="Скопировать текст статьи"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+          </div>
+        </header>
+        <div class="art-body">
+          <p class="qblock">Блок 1 · О кандидате</p>
+          <div class="tbl"><table>
+            <thead><tr><th>№</th><th>Вопрос</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Ваш игровой никнейм</td></tr>
+              <tr><td>2</td><td>Сколько времени вы реально готовы уделять игре и обязанностям в Кооперативе?</td></tr>
+              <tr><td>3</td><td>Чем хотите заниматься в первую очередь: торговля, добыча ресурсов, крафт и производство или охрана?</td></tr>
+              <tr><td>4</td><td>Состояли ли раньше в других фракциях? Если да — почему ушли?</td></tr>
+              <tr><td>5</td><td>Есть ли у вас ограничения по времени выхода в игру, о которых нам стоит знать заранее?</td></tr>
+            </tbody>
+          </table></div>
+
+          <p class="qblock">Блок 2 · Знание Устава</p>
+          <div class="tbl"><table>
+            <thead><tr><th>№</th><th>Вопрос</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Какая расчётная единица используется внутри Кооператива и для чего она нужна?</td></tr>
+              <tr><td>2</td><td>Что будет, если продать товар ниже минимального прейскуранта без согласования с руководством?</td></tr>
+              <tr><td>3</td><td>Назовите три ступени наказаний по порядку. Освобождает ли незнание правил от ответственности?</td></tr>
+              <tr><td>4</td><td>Что можно класть на склад и нужно ли для этого разрешение?</td></tr>
+              <tr><td>5</td><td>Вы взяли недорогую крафтовую вещь со склада. Что обязаны сделать сразу после этого?</td></tr>
+              <tr><td>6</td><td>Вам нужен дорогой материал. У кого спрашиваете разрешение?</td></tr>
+              <tr><td>7</td><td>Можно ли передать координаты базы другу из другой фракции? Чем это грозит?</td></tr>
+              <tr><td>8</td><td>Вас не вызвали в офицерскую, но вы нужны позже. Где вы находитесь?</td></tr>
+              <tr><td>9</td><td>Вы на добыче, и в этот момент на базу напали. Ваши действия?</td></tr>
+              <tr><td>10</td><td>У вас пропало соединение посреди задачи. Что нужно сделать?</td></tr>
+              <tr><td>11</td><td>Распространяются ли правила Устава на заместителей и главу?</td></tr>
+              <tr><td>12</td><td>Вы не согласны с выданным выговором. Куда и как обжалуете?</td></tr>
+            </tbody>
+          </table></div>
+
+          <p class="qblock">Блок 3 · Поведение в спорных ситуациях</p>
+          <div class="tbl"><table>
+            <thead><tr><th>№</th><th>Ситуация</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Свой же участник оскорбляет вас в общем чате. Как поступаете?</td></tr>
+              <tr><td>2</td><td>Вы видите, как другой игрок берёт дорогие материалы без разрешения. Ваши действия?</td></tr>
+              <tr><td>3</td><td>Распоряжение офицера кажется вам ошибочным. Что делаете в моменте и что — после?</td></tr>
+              <tr><td>4</td><td>Враждебная фракция предлагает выгодную сделку мимо руководства. Ваш ответ?</td></tr>
+            </tbody>
+          </table></div>
+
+          <div class="note">Собеседование — не экзамен на зубрёжку. Нам важно понять, что человек адекватен, готов работать в команде и не создаст проблем на базе.</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ПОДПИСИ -->
+    <div class="sign reveal">
+      <div class="plate">
+        <span>УТВЕРДИЛ</span>
+        <b>Глава Кооператива</b>
+        <div class="sline"></div>
+        <small>ПОДПИСЬ / НИКНЕЙМ</small>
+      </div>
+      <div class="plate">
+        <span>СОГЛАСОВАНО</span>
+        <b>Главный советник — Clanzlo_</b>
+        <div class="sline"></div>
+        <small>ПОДПИСЬ / НИКНЕЙМ</small>
+      </div>
+      <div class="plate">
+        <span>ДАТА УТВЕРЖДЕНИЯ РЕДАКЦИИ</span>
+        <b>25 ноября 2026 г.</b>
+        <div class="sline"></div>
+        <small>РЕД. 25.11.2026</small>
+      </div>
+      <div class="approve">УТВЕРЖДЕНО<span>25.11.2026</span></div>
+    </div>
+
+    <div class="footer reveal">
+      <span>КООПЕРАТИВ // УСТАВ ФРАКЦИИ</span>
+      <i>⬡</i>
+      <span>ДЕЙСТВУЮЩАЯ РЕДАКЦИЯ</span>
+    </div>
+
   </div>
+</main>
 
-  <!-- РАЗДЕЛ 1 -->
-  <h2 id="r1"><span class="num">1</span> Общие положения</h2>
+<button type="button" id="totop" title="Наверх" aria-label="Наверх">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+</button>
+<div id="toast" role="status" aria-live="polite"></div>
 
-  <h3><span class="art">Статья 1.</span> Понятие и назначение Устава</h3>
-  <ol>
-    <li><strong>Устав Кооператива</strong> — внутренний нормативный документ, регулирующий организационные, управленческие, экономические и дисциплинарные отношения внутри фракции, а также устанавливающий права, обязанности и ответственность её участников.</li>
-    <li><strong>Основная цель Устава</strong> — обеспечение единого порядка деятельности Кооператива, поддержание внутренней дисциплины, регулирование взаимоотношений между участниками, защита имущества, ресурсов и общих интересов фракции.</li>
-    <li>Положения Устава распространяются на <strong>всех участников</strong> независимо от занимаемого положения, присвоенного статуса и продолжительности пребывания во фракции.</li>
-    <li>Каждый участник <strong>обязан ознакомиться</strong> с настоящим Уставом, знать его положения и соблюдать установленные требования.</li>
-    <li><strong>Незнание положений Устава не освобождает</strong> участника от ответственности за их нарушение.</li>
-    <li>Действие Устава распространяется на все направления деятельности Кооператива: торговлю, добычу ресурсов, строительство, охрану и внутреннее управление.</li>
-    <li>Изменения и дополнения вносятся исключительно по решению <strong>Лидера Кооператива</strong> либо в порядке, установленном руководящим составом.</li>
-  </ol>
+<script>
+(function(){
+"use strict";
+var d=document, w=window;
+function $(id){ return d.getElementById(id); }
+function all(s){ return Array.prototype.slice.call(d.querySelectorAll(s)); }
 
-  <h3><span class="art">Статья 2.</span> Организационная структура Кооператива</h3>
-  <ol>
-    <li>Кооператив — добровольное <strong>торговое, производственное и строительное объединение</strong>, действующее на принципах взаимопомощи, коллективной ответственности, организованности и дисциплины.</li>
-    <li><strong>Высший орган управления</strong> — Лидер фракции.</li>
-    <li>В систему управления также входят:
-      <ul>
-        <li><strong>Совет заместителей</strong>;</li>
-        <li><strong>Экс-глава Clanzlo_</strong> — осуществляет функции Главного советника.</li>
-      </ul>
-    </li>
-    <li>Распоряжения руководящего состава, отданные в пределах полномочий, <strong>обязательны для исполнения</strong> всеми участниками.</li>
-    <li>Каждый участник обязан соблюдать установленную иерархию и <strong>не допускать действий</strong>, направленных на подрыв авторитета руководства.</li>
-  </ol>
+try{
+  d.documentElement.classList.add('js');
+  var reduced = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  <h3><span class="art">Статья 3.</span> Внутренняя финансовая система</h3>
-  <ol>
-    <li>Официальная внутренняя расчётная единица Кооператива — <strong>гайки</strong>.</li>
-    <li>Гайки используются для:
-      <ul>
-        <li>внутренних расчётов;</li>
-        <li>выплаты вознаграждений;</li>
-        <li>формирования штрафных санкций;</li>
-        <li>иных финансовых операций.</li>
-      </ul>
-    </li>
-    <li>Все участники обязаны соблюдать установленный порядок финансовых расчётов и <strong>не допускать несанкционированного распоряжения</strong> средствами Кооператива.</li>
-  </ol>
+  /* Появление при скролле */
+  var revs=all('.reveal');
+  if('IntersectionObserver' in w && !reduced){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    },{threshold:.08, rootMargin:'0px 0px -5% 0px'});
+    revs.forEach(function(el){ io.observe(el); });
+  } else {
+    revs.forEach(function(el){ el.classList.add('in'); });
+  }
 
-  <!-- РАЗДЕЛ 2 -->
-  <h2 id="r2"><span class="num">2</span> Права и обязанности участников</h2>
+  /* Счётчики в шапке */
+  var statsBox=$('stats');
+  function runCount(el){
+    var target=parseInt(el.getAttribute('data-count'),10)||0;
+    if(reduced){ el.textContent=target; return; }
+    var t0=null;
+    function step(t){
+      if(!t0)t0=t;
+      var p=Math.min(1,(t-t0)/900), e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(target*e);
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if(statsBox && 'IntersectionObserver' in w && !reduced){
+    var counters=all('#stats b[data-count]');
+    counters.forEach(function(el){ el.textContent='0'; });
+    var so=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ counters.forEach(runCount); so.disconnect(); } });
+    },{threshold:.3});
+    so.observe(statsBox);
+  }
 
-  <h3><span class="art">Статья 4.</span> Права участников</h3>
-  <p>Каждый участник Кооператива имеет право:</p>
-  <table>
-    <thead><tr><th>№</th><th>Право</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>Участвовать в деятельности Кооператива (торговые, производственные, строительные и иные мероприятия)</td></tr>
-      <tr><td>2</td><td>Получать информацию о деятельности, внутренних правилах, решениях и изменениях Устава (кроме сведений ограниченного доступа)</td></tr>
-      <tr><td>3</td><td>Высказывать мнение, вносить предложения по развитию фракции и совершенствованию внутреннего порядка</td></tr>
-      <tr><td>4</td><td>Обращаться к Лидеру, Экс-главе, Совету заместителей или иному уполномоченному представителю руководства с вопросами, заявлениями, предложениями и жалобами</td></tr>
-      <tr><td>5</td><td>Рассчитывать на уважительное и справедливое отношение со стороны других участников и руководства</td></tr>
-      <tr><td>6</td><td>Знать существо дисциплинарного обвинения, предоставлять объяснения, доказательства и возражения до принятия решения о взыскании</td></tr>
-      <tr><td>7</td><td>Обжаловать наложенное взыскание Лидеру или иному вышестоящему представителю руководства, не участвовавшему в первоначальном рассмотрении</td></tr>
-      <tr><td>8</td><td>Претендовать на повышение в должности или внутреннем ранге при наличии заслуг, опыта и соблюдении требований</td></tr>
-      <tr><td>9</td><td>Получать содействие и поддержку Кооператива в пределах имеющихся ресурсов и возможностей</td></tr>
-      <tr><td>10</td><td>Добровольно прекратить членство, уведомив руководство и урегулировав обязательства перед фракцией</td></tr>
-    </tbody>
-  </table>
+  /* Прогресс, активный раздел, «наверх» */
+  var snavs=all('.snav'), chips=all('.chip');
+  var secs=['r1','r2','r3','r4','r5'].map(function(id){ return $(id); });
+  var subs=all('.ssub a');
+  var subT=subs.map(function(a){ return d.querySelector(a.getAttribute('href')); });
+  var chipsRow=$('chips'), prog=$('prog'), pfill=$('pfill'), ppct=$('ppct'), totop=$('totop');
+  var ticking=false, lastCur=-1;
+  function onScroll(){
+    if(ticking)return;
+    ticking=true;
+    requestAnimationFrame(function(){
+      ticking=false;
+      var y=w.pageYOffset||d.documentElement.scrollTop;
+      var h=d.documentElement.scrollHeight-w.innerHeight;
+      var pc=h>0?Math.min(100,Math.max(0,y/h*100)):0;
+      prog.style.width=pc+'%';
+      if(pfill)pfill.style.width=pc+'%';
+      if(ppct)ppct.textContent=Math.round(pc)+'%';
+      totop.classList.toggle('show', y>700);
+      var cur=0,i;
+      for(i=0;i<secs.length;i++){ if(secs[i]&&secs[i].getBoundingClientRect().top<=160)cur=i; }
+      if(cur!==lastCur){
+        lastCur=cur;
+        snavs.forEach(function(a,idx){ a.classList.toggle('on',idx===cur); });
+        chips.forEach(function(a,idx){ a.classList.toggle('on',idx===cur); });
+        var on=chips[cur];
+        if(on&&chipsRow&&chipsRow.offsetParent){
+          var l=on.offsetLeft,r=l+on.offsetWidth;
+          if(l<chipsRow.scrollLeft||r>chipsRow.scrollLeft+chipsRow.clientWidth){
+            var t=l-chipsRow.clientWidth/2+on.offsetWidth/2;
+            if(chipsRow.scrollTo)chipsRow.scrollTo({left:t,behavior:'smooth'});
+            else chipsRow.scrollLeft=t;
+          }
+        }
+      }
+      subs.forEach(function(a,idx){
+        var el=subT[idx]; if(!el)return;
+        var r=el.getBoundingClientRect();
+        a.classList.toggle('on', r.top<=170 && r.bottom>170);
+      });
+    });
+  }
+  w.addEventListener('scroll',onScroll,{passive:true});
+  w.addEventListener('resize',onScroll,{passive:true});
+  onScroll();
 
-  <h3><span class="art">Статья 5.</span> Обязанности участников</h3>
-  <p>Каждый участник Кооператива обязан:</p>
-  <ol>
-    <li>Исполнять распоряжения и поручения <strong>Лидера, Экс-главы и заместителей</strong>.</li>
-    <li>Своевременно выполнять установленные нормы по сбору и передаче ресурсов.</li>
-    <li>Предоставлять отчётность о торговой, производственной и строительной деятельности в установленные сроки.</li>
-    <li>Обеспечивать надлежащее состояние объектов базы, складских помещений и торговых площадок.</li>
-    <li>Принимать участие в защите имущества, финансовых средств и территории Кооператива от внешних угроз.</li>
-    <li>Соблюдать внутреннюю дисциплину и поддерживать деловую репутацию фракции.</li>
-    <li>Содействовать достижению общих целей Кооператива.</li>
-  </ol>
+  totop.addEventListener('click',function(){ w.scrollTo({top:0,behavior:'smooth'}); });
+  $('printBtn').addEventListener('click',function(){ w.print(); });
 
-  <h3><span class="art">Статья 6.</span> Ограничения и запреты</h3>
-  <p>Участникам Кооператива <strong>запрещается</strong>:</p>
-  <table>
-    <thead><tr><th>Пункт</th><th>Запрет</th></tr></thead>
-    <tbody>
-      <tr><td>1.1</td><td>Реализация ресурсов, товаров и материалов по ценам ниже установленного минимального прейскуранта без предварительного согласования с руководством</td></tr>
-      <tr><td>1.2</td><td>Присваивать, отчуждать или использовать имущество общего пользования (средства казны, ресурсы общего склада) без разрешения руководства</td></tr>
-      <tr><td>1.3</td><td>Заключать несанкционированные торговые и иные соглашения с представителями враждебных фракций</td></tr>
-      <tr><td>1.4</td><td>Совершать действия, направленные на дестабилизацию внутренней обстановки и провоцирование конфликтов между участниками</td></tr>
-      <tr><td>1.5</td><td>Допускать оскорбительное, провокационное и иное недопустимое поведение по отношению к другим участникам</td></tr>
-      <tr><td>1.6</td><td>Разглашать внутреннюю информацию Кооператива без разрешения руководства</td></tr>
-    </tbody>
-  </table>
-  <div class="warn">Нарушение требований настоящей статьи влечёт применение мер ответственности в соответствии с документом «Доска нарушений».</div>
+  /* Уведомление */
+  var tT=null;
+  function toast(m){
+    var t=$('toast');
+    t.textContent=m; t.classList.add('show');
+    clearTimeout(tT);
+    tT=setTimeout(function(){ t.classList.remove('show'); },2300);
+  }
 
-  <!-- РАЗДЕЛ 3 -->
-  <h2 id="r3"><span class="num">3</span> Режим базы и строительная деятельность</h2>
+  /* Копирование */
+  function copy(txt,ok){
+    function done(){ toast(ok); }
+    function legacy(){
+      try{
+        var ta=d.createElement('textarea');
+        ta.value=txt; ta.setAttribute('readonly','');
+        ta.style.cssText='position:fixed;top:-1000px;opacity:0;';
+        d.body.appendChild(ta); ta.select(); ta.setSelectionRange(0,txt.length);
+        var o=d.execCommand('copy');
+        d.body.removeChild(ta);
+        if(o)done(); else toast('Не удалось скопировать');
+      }catch(e){ toast('Не удалось скопировать'); }
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done,legacy);
+    else legacy();
+  }
 
-  <h3><span class="art">Статья 7.</span> Статус и режим безопасности базы</h3>
-  <ol>
-    <li>База Кооператива — <strong>закрытый стратегический объект</strong>, предназначенный для размещения имущества, хранения ресурсов, организации производственной деятельности и обеспечения безопасности участников.</li>
-    <li><strong>Запрещается</strong> передача третьим лицам координат, схем расположения, планировок и иной информации, раскрывающей местоположение либо внутреннее устройство базы, без разрешения руководства.</li>
-    <li>Действия, предусмотренные п. 2, рассматриваются как <strong>грубое нарушение внутренней безопасности</strong> и могут повлечь дисциплинарную санкцию в виде <strong>«Чёрной метки»</strong>.</li>
-  </ol>
+  /* Статья → текст для Discord */
+  function norm(s){ return s.replace(/\s+/g,' ').trim(); }
+  function liText(li){
+    var main='';
+    Array.prototype.forEach.call(li.childNodes,function(n){
+      if(n.nodeType===3)main+=n.nodeValue;
+      else if(n.nodeType===1&&n.tagName!=='UL'&&n.tagName!=='OL')main+=n.textContent;
+    });
+    main=norm(main);
+    var sub=[];
+    Array.prototype.forEach.call(li.children,function(ch){
+      if(ch.tagName==='UL'||ch.tagName==='OL'){
+        Array.prototype.forEach.call(ch.children,function(s){
+          if(s.tagName==='LI')sub.push('   • '+norm(s.textContent));
+        });
+      }
+    });
+    return sub.length?main+'\n'+sub.join('\n'):main;
+  }
+  function articleText(art){
+    var clone=art.cloneNode(true);
+    Array.prototype.forEach.call(clone.querySelectorAll('.acts'),function(n){ n.parentNode.removeChild(n); });
+    var num=clone.querySelector('.art-num'), h=clone.querySelector('h3'), body=clone.querySelector('.art-body');
+    var n=num?parseInt(num.textContent.replace(/\D/g,''),10):'';
+    var lines=['СТАТЬЯ '+n+' — '+(h?norm(h.textContent):''),''];
+    function walk(node){
+      Array.prototype.forEach.call(node.childNodes,function(ch){
+        if(ch.nodeType!==1)return;
+        var tag=ch.tagName, cl=ch.classList;
+        if(tag==='OL'){
+          var i=parseInt(ch.getAttribute('start')||'1',10);
+          Array.prototype.forEach.call(ch.children,function(li){
+            if(li.tagName==='LI'){ lines.push(i+'. '+liText(li)); i++; }
+          });
+          lines.push('');
+        }
+        else if(tag==='UL'){
+          Array.prototype.forEach.call(ch.children,function(li){
+            if(li.tagName==='LI')lines.push('• '+liText(li));
+          });
+          lines.push('');
+        }
+        else if(tag==='P'){ lines.push(norm(ch.textContent),''); }
+        else if(tag==='TABLE'){
+          Array.prototype.forEach.call(ch.querySelectorAll('tbody tr'),function(tr){
+            lines.push(Array.prototype.map.call(tr.children,function(td){ return norm(td.textContent); }).join(' — '));
+          });
+          lines.push('');
+        }
+        else if(tag==='BLOCKQUOTE'){
+          Array.prototype.forEach.call(ch.querySelectorAll('p'),function(p){ lines.push(norm(p.textContent),''); });
+        }
+        else if(cl.contains('rule')){
+          var hd=ch.querySelector('.rule-head'), bd=ch.querySelector('.rule-body');
+          if(hd)lines.push(norm(hd.textContent));
+          if(bd)walk(bd);
+          lines.push('');
+        }
+        else if(cl.contains('step')){
+          var lv=ch.querySelector('.lv'), h4=ch.querySelector('h4'), p=ch.querySelector('p');
+          lines.push((lv?norm(lv.textContent)+' ':'')+(h4?norm(h4.textContent):'')+' — '+(p?norm(p.textContent):''),'');
+        }
+        else if(cl.contains('ocard')){
+          var h4c=ch.querySelector('h4');
+          if(h4c)lines.push(norm(h4c.textContent));
+          Array.prototype.forEach.call(ch.querySelectorAll('p'),function(p){ lines.push(norm(p.textContent)); });
+          lines.push('');
+        }
+        else if(cl.contains('alert')||cl.contains('note')){ lines.push(norm(ch.textContent),''); }
+        else if(tag==='DIV'||tag==='SECTION'){ walk(ch); }
+      });
+    }
+    if(body)walk(body);
+    return lines.join('\n').replace(/\n{3,}/g,'\n\n').trim();
+  }
 
-  <h3><span class="art">Статья 8.</span> Обязанности при строительных работах</h3>
-  <ol>
-    <li>Каждый участник обязан принимать участие в обеспечении функционирования и развития базы в соответствии с установленным графиком и поручениями руководства.</li>
-    <li><strong>Основные направления строительной деятельности:</strong>
-      <ul>
-        <li>выполнение строительных и ремонтных работ;</li>
-        <li>добыча, сбор и подготовка строительных материалов;</li>
-        <li>обеспечение сохранности имущества и ресурсов базы;</li>
-        <li>участие в дежурствах и охране внешнего периметра;</li>
-        <li>исполнение иных поручений, связанных с развитием и безопасностью территории.</li>
-      </ul>
-    </li>
-    <li>Распределение обязанностей, установление сроков и определение графика дежурств осуществляются <strong>руководящим составом</strong>.</li>
-    <li>Участник, привлечённый к строительным работам, <strong>не вправе самовольно прекращать</strong> выполнение обязанностей без уважительных оснований.</li>
-  </ol>
+  d.addEventListener('click',function(e){
+    var b=e.target.closest?e.target.closest('.acts button'):null;
+    if(!b)return;
+    if(b.hasAttribute('data-link')){
+      copy(location.href.split('#')[0]+b.getAttribute('data-link'),'Ссылка на статью скопирована');
+    } else {
+      var art=b.closest('.art');
+      if(art)copy(articleText(art),'Текст статьи скопирован — вставляй в Discord');
+    }
+  });
 
-  <h3><span class="art">Статья 9.</span> Основания и порядок прекращения работ</h3>
-  <ol>
-    <li>Строительные работы могут быть временно приостановлены или прекращены по решению <strong>Лидера, Экс-главы или заместителя</strong> в пределах их полномочий.</li>
-    <li><strong>Основания для временного прекращения работ:</strong>
-      <ul>
-        <li>возникновение непосредственной угрозы безопасности базы, имущества или участников;</li>
-        <li>нападение на территорию базы, торговые точки, складские помещения либо иные объекты под контролем Кооператива;</li>
-        <li>получение распоряжения руководства о необходимости выполнения иных приоритетных задач;</li>
-        <li>необходимость оказания помощи участникам, оказавшимся в опасной ситуации;</li>
-        <li>возникновение чрезвычайных обстоятельств, препятствующих дальнейшей деятельности;</li>
-        <li>технические неисправности, проблемы с игровым подключением и иные объективные обстоятельства.</li>
-      </ul>
-    </li>
-    <li>При возникновении непосредственной угрозы безопасности участники <strong>обязаны приостановить</strong> работы и приступить к устранению угрозы согласно распоряжениям руководства.</li>
-    <li>При получении распоряжения о прекращении работ в целях защиты объектов Кооператива участник обязан <strong>незамедлительно исполнить</strong> его.</li>
-    <li>При невозможности продолжения работ по техническим или личным обстоятельствам участник обязан <strong>уведомить</strong> ответственного за строительство либо представителя руководства.</li>
-    <li><strong>Самовольное оставление строительной площадки</strong> без уважительных оснований, предварительного уведомления или разрешения — нарушение внутренней дисциплины.</li>
-    <li><strong>Не признаётся нарушением</strong> временное оставление работ в целях исполнения приоритетного распоряжения руководства, предотвращения угрозы безопасности или оказания помощи участникам.</li>
-    <li>После устранения обстоятельств участники <strong>обязаны возобновить</strong> выполнение обязанностей, если иное не предусмотрено распоряжением руководства.</li>
-  </ol>
+  /* Поиск */
+  var q=$('q'), cnt=$('cnt'), marks=[], mi=-1, deb=null;
+  function clearMarks(){
+    marks.forEach(function(m){
+      var p=m.parentNode;
+      if(p){ p.replaceChild(d.createTextNode(m.textContent),m); p.normalize(); }
+    });
+    marks=[]; mi=-1; cnt.textContent='';
+  }
+  function runSearch(){
+    clearMarks();
+    var v=q.value.trim();
+    if(v.length<2)return;
+    var lv=v.toLowerCase(), root=$('doc'), nodes=[];
+    var walker=d.createTreeWalker(root,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        if(!n.nodeValue||!n.nodeValue.trim())return NodeFilter.FILTER_REJECT;
+        var p=n.parentElement;
+        if(!p||p.closest('.acts,script,style,button,kbd,.ticker'))return NodeFilter.FILTER_REJECT;
+        return n.nodeValue.toLowerCase().indexOf(lv)>-1?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;
+      }
+    },false);
+    while(walker.nextNode())nodes.push(walker.currentNode);
+    nodes.forEach(function(n){
+      var txt=n.nodeValue, low=txt.toLowerCase();
+      var frag=d.createDocumentFragment(), pos=0, idx;
+      while((idx=low.indexOf(lv,pos))>-1){
+        if(idx>pos)frag.appendChild(d.createTextNode(txt.slice(pos,idx)));
+        var m=d.createElement('mark');
+        m.textContent=txt.slice(idx,idx+v.length);
+        frag.appendChild(m); marks.push(m);
+        pos=idx+v.length;
+      }
+      if(pos<txt.length)frag.appendChild(d.createTextNode(txt.slice(pos)));
+      n.parentNode.replaceChild(frag,n);
+    });
+    cnt.textContent=marks.length?marks.length+' совп.':'нет совпадений';
+  }
+  function navMark(dir){
+    if(!marks.length)return;
+    if(mi>=0&&marks[mi])marks[mi].classList.remove('cur');
+    mi=(mi+dir+marks.length)%marks.length;
+    var m=marks[mi];
+    m.classList.add('cur');
+    m.scrollIntoView({block:'center',behavior:'smooth'});
+    cnt.textContent=(mi+1)+'/'+marks.length;
+  }
+  q.addEventListener('input',function(){ clearTimeout(deb); deb=setTimeout(runSearch,180); });
+  q.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){ e.preventDefault(); navMark(e.shiftKey?-1:1); }
+    else if(e.key==='Escape'){ q.value=''; clearMarks(); q.blur(); }
+  });
+  $('sprev').addEventListener('click',function(){ navMark(-1); });
+  $('snext').addEventListener('click',function(){ navMark(1); });
+  $('sclr').addEventListener('click',function(){ q.value=''; clearMarks(); q.focus(); });
+  d.addEventListener('keydown',function(e){
+    if(e.key==='/'&&!e.ctrlKey&&!e.metaKey&&!e.altKey){
+      var a=d.activeElement, tag=a?a.tagName:'';
+      if(tag!=='INPUT'&&tag!=='TEXTAREA'){ e.preventDefault(); q.focus(); q.select(); }
+    }
+  });
+  w.addEventListener('beforeprint',clearMarks);
 
-  <h3><span class="art">Статья 10.</span> Приоритетность выполнения обязанностей</h3>
-  <p>Устанавливается следующая <strong>очерёдность выполнения задач:</strong></p>
-  <table>
-    <thead><tr><th>Приоритет</th><th>Задача</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>Обеспечение безопасности участников и отражение непосредственных угроз базе</td></tr>
-      <tr><td>2</td><td>Исполнение экстренных распоряжений Лидера и уполномоченных представителей руководства</td></tr>
-      <tr><td>3</td><td>Оказание помощи участникам, находящимся в опасной ситуации</td></tr>
-      <tr><td>4</td><td>Обеспечение сохранности имущества, ресурсов и торговых объектов</td></tr>
-      <tr><td>5</td><td>Выполнение плановых строительных, производственных и добывающих работ</td></tr>
-    </tbody>
-  </table>
-  <ol start="2">
-    <li>При необходимости одновременного выполнения нескольких задач участники обязаны руководствоваться <strong>установленной очередностью приоритетов</strong> и распоряжениями руководящего состава.</li>
-    <li>Прекращение строительных работ в связи с выполнением задач более высокого приоритета <strong>не рассматривается как нарушение</strong> обязанностей участника.</li>
-  </ol>
+}catch(err){
+  d.documentElement.classList.remove('js');
+  all('.reveal').forEach(function(el){ el.classList.add('in'); });
+}
+})();
+</script>
 
-  <!-- РАЗДЕЛ 4 -->
-  <h2 id="r4"><span class="num">4</span> Собеседование и приём в Кооператив</h2>
-
-  <h3><span class="art">Статья 11.</span> Общие требования к процедуре приёма</h3>
-  <ol>
-    <li>Приём новых участников осуществляется посредством <strong>предварительного собеседования</strong>.</li>
-    <li><strong>Цели собеседования:</strong>
-      <ul>
-        <li>установление игровых данных кандидата;</li>
-        <li>определение его возможностей и предполагаемого направления деятельности;</li>
-        <li>проверка знания основных положений Устава;</li>
-        <li>оценка готовности соблюдать внутреннюю дисциплину;</li>
-        <li>определение способности действовать в интересах Кооператива в различных игровых ситуациях.</li>
-      </ul>
-    </li>
-  </ol>
-
-  <h3><span class="art">Статья 12.</span> Вводный инструктаж кандидата</h3>
-  <ol>
-    <li>Перед началом собеседования уполномоченный представитель <strong>обязан ознакомить</strong> кандидата с основными принципами деятельности фракции.</li>
-    <li>В рамках вводного инструктажа кандидату сообщается следующее:
-      <blockquote>
-        <p><strong>Приветствуем Вас на собеседовании в Кооператив.</strong></p>
-        <p>Кооператив представляет собой организационное объединение, деятельность которого направлена на развитие торговой, производственной и строительной инфраструктуры, создание собственной базы и обеспечение устойчивой внутренней экономики.</p>
-        <p>Основными принципами нашей деятельности являются <strong>дисциплина, взаимопомощь, ответственность и соблюдение установленных правил</strong>.</p>
-        <p>В качестве официальной внутренней расчётной единицы используются <strong>гайки</strong>.</p>
-        <p>Каждый участник Кооператива обязан вносить личный вклад в развитие фракции посредством добычи ресурсов, осуществления торговой деятельности, участия в строительстве и обеспечения безопасности объектов.</p>
-        <p>Участие в деятельности Кооператива предполагает исполнение обязанностей, установленных настоящим Уставом, и соблюдение распоряжений руководящего состава.</p>
-        <p>За нарушение внутреннего порядка, присвоение имущества, саботаж и иные действия, противоречащие установленным правилам, предусматривается ответственность в соответствии с документом <strong>«Доска нарушений»</strong>.</p>
-        <p>В случае согласия с установленными требованиями и готовности исполнять обязанности участника Кооператива предлагаем приступить к процедуре собеседования.</p>
-      </blockquote>
-    </li>
-  </ol>
-
-  <h3><span class="art">Статья 13.</span> Перечень вопросов для собеседования</h3>
-
-  <h3 style="border-left-color:var(--navy2); background:rgba(18,38,63,.04);">Блок 1. Общие сведения о кандидате</h3>
-  <table>
-    <thead><tr><th>№</th><th>Вопрос</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>Игровой никнейм или имя</td></tr>
-      <tr><td>2</td><td>Количество времени, которое кандидат готов уделять игровой деятельности и выполнению обязанностей в Кооперативе</td></tr>
-      <tr><td>3</td><td>Приоритетное направление деятельности: торговля, добыча ресурсов, строительство базы или обеспечение охраны</td></tr>
-      <tr><td>4</td><td>Сведения о предыдущем участии в других фракциях и причинах прекращения такого участия</td></tr>
-    </tbody>
-  </table>
-
-  <h3 style="border-left-color:var(--navy2); background:rgba(18,38,63,.04);">Блок 2. Проверка знания положений Устава</h3>
-  <table>
-    <thead><tr><th>№</th><th>Вопрос</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>На каких принципах основана экономическая деятельность Кооператива и какая расчётная единица применяется при внутренних операциях?</td></tr>
-      <tr><td>2</td><td>Какие меры ответственности могут быть применены к участнику, осуществившему продажу товаров по цене ниже минимального прейскуранта без согласования с руководством?</td></tr>
-      <tr><
+</body>
+</html>
